@@ -1,0 +1,453 @@
+.column1 {
+    float: left;
+    width: 25%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+  }
+
+#gallery .banner li {background-size: 100% !important;}
+#gallery {height: auto !important;}
+
+
+#team{ 
+    position: relative;
+    width: 1440px;
+    max-width: 95%;
+    /* height: 600px; */
+    margin: 30px auto;
+    background-color: #efefef;
+    overflow: hidden;
+}
+
+.team{padding: 30px;}
+
+.blurb2{padding-left: 30px;padding-right: 30px;}
+
+.blurb3 {
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 42px;
+  font-family: "Raleway",Helvetica,sans-serif;
+  font-weight: 100;
+}
+
+p.title1 { margin-bottom: 8px;}
+
+.container1 h2 {margin-top: 10px; margin-bottom: 4px;font-size: 26px;}
+
+h2.blurb3 { margin-top: 30px;}
+.card {box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);}
+
+.container1 {
+   /* padding: 0 16px; */
+    margin-bottom: 20px;
+}
+
+.container1::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.title1 { color: grey;}
+
+.button1 {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+  }
+
+.button1:hover {background-color: #555;}
+
+button#send-button {
+      width: 30%;
+      height: 74px;
+      background: #000;
+      color: #fff;
+      font-weight: 600;
+      border: 1px #000;
+}
+
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: #909090; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px 20px 10px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+    font-family: "Raleway",Helvetica,sans-serif;
+      font-weight: 500;
+}
+
+#myBtn:hover {background-color: #555; /* Add a dark-grey background on hover */}
+    
+#contact .wrapper form textarea {margin: 15px 0 !important;}
+
+.btn-info {
+    color: #fff;
+    background-color: #000 !important;
+    border-color: #000 !important;
+}
+    
+/** 2 column modal **/
+.rowmode {
+    background-color: #ccc;
+    padding: 0px;
+    /*I have added a background-color to help me solve the design issues, but this is sthg to be removed*/
+}
+        
+.columnmode1 {
+    float: left;
+    width: 30%;
+    padding: 30px 0 0 15px;
+}
+         
+.columnmode2 {
+    float: left;
+    width: 70%;
+    padding: 0px 15px;
+}
+         
+.rowmode:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+        
+.title {
+    font-family: 'Raleway';
+    font-size: 24px;
+    color: #000000;
+   /* padding: 10px 15px 0px 15px; */
+    font-weight: bold;
+}
+        
+.subtitle {
+    font-family: 'Raleway';
+    font-size: 18px;
+    color: #000000;
+   /* padding: 0px 0px 0px 15px; */
+    font-weight: 400;
+}
+    
+.text {
+    font-family: 'Raleway';
+    font-size: 16px;
+    color: #000000;
+    padding: 0px 15px 35px 15px;
+}
+
+p.subtitle {
+    margin: 0;
+}
+p.text {
+    margin-bottom: 0px;
+    margin-top: 30px ;
+}
+p.title {
+    margin-bottom: 0px;
+}
+
+hr.team-hr {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.imgw100 {
+    width: 100%;
+    padding: 5%
+}
+
+.btn-group-lg>.btn, .btn-lg {
+    border-radius: 0px !important;
+    font-size: 14px;
+    padding: 6px 10px;
+}
+
+/** vertical line - what can we do */
+#featured .wrapper .blurb:after {display: none;}
+
+.btn-info:hover {
+    color: #fff !important;
+    background-color: #909090 !important;
+    border-color: #909090 !important;
+}
+
+.btn-info.focus, .btn-info:focus {
+    color: #fff !important;
+    background-color: #909090 !important;
+    border-color: #909090 !;
+}
+
+#featured .wrapper .blurb h2:after {
+    content: "";
+    position: relative;
+    bottom: 15px;
+    display: inline-block;
+    width: 70px;
+    height: 1px;
+    margin-left: 20px;
+    background-color: #111;
+}
+
+.you {
+  margin-bottom: 60px;
+  text-align: left;
+}
+
+.you li {padding-bottom: 2px;}
+
+.what-blurb {padding-right: 15px;}
+
+/*
+@media (max-width: 1267px){
+    blockquote {height: 80px;}
+}
+@media (max-width: 851px){
+    blockquote {height: 100px;}
+}
+*/
+
+@media (max-width: 1023px){
+    #featured .wrapper .blurb {text-align: left;}
+    #featured .wrapper .blurb p {max-width: 100%; margin-bottom: 10px;}
+    .what-blurb {padding-left: 15px;}
+    /* .you {width: 50%; margin: auto;} */
+    #about svg, #featured svg, #three-slide svg {opacity: 60%;}
+}
+@media (max-width: 768px) {
+    #galler, #about {height: auto;}
+    button#send-button { width: 20% !important;}
+    #contact {padding-bottom: 50px; height: auto; }
+    #about {padding-top: 30px;
+        padding-bottom: 30px;}
+    
+}
+@media screen and (max-width: 650px) {
+    .column1 {width: 100%;display: block;}
+  /*  #team .wrapper .blurb1 h2 {font-size: 30px !important;} */
+}
+
+@media screen and (max-width: 640px) {
+    h2.blurb3 { font-size: 30px;}
+    #contact .wrapper .blurb h2 {
+        font-size: 30px;
+        font-family: "Raleway",Helvetica,sans-serif;
+        font-weight: 100;
+        }
+    /*#contact {padding-top: 70px;} */
+}
+@media screen and (max-width: 480px) {  
+    .column {    width: 100%;  }
+    .right {    width: 100%;  }
+    .left {    width: 100%;  }  
+}
+@media (max-width: 421px){
+    #featured .wrapper .blurb {text-align: left;}
+    #featured .wrapper .blurb h2 {font-size: 26px;}
+    #featured {height: auto; padding-top: 30px; padding-bottom: 30px;}
+    #contact {height: auto;}
+    button#send-button { margin-bottom: auto; margin-top: 15px; }
+    button#send-button {width: 100% !important; padding: 10px 15px !important;}
+    .g-recaptcha {display: inline-block;}
+    #recaptcha { width: 304px; margin: 0 auto;}
+}
+@media (max-width: 375px){
+    #featured .wrapper .blurb {text-align: left;}
+    #featured .wrapper .blurb h2 {font-size: 26px;}
+    #featured {height: auto; padding-top: 30px; padding-bottom: 30px;}
+    #contact {height: auto; }
+    button#send-button { margin-bottom: 0px;margin-top: 15px;}
+}
+
+@media (max-width: 375px){
+    .news {text-align: center;}
+}
+
+.news { padding-top: 20px;}
+
+blockquote {
+    font-family: Georgia, serif;
+    font-size: 14px !important;
+    font-style: italic;
+    padding-left: 15px !important;
+    margin: 0 0 20px !important;
+    line-height: 1.45;
+    position: relative;
+    color: #383838;
+    border-left: none !important;
+   }
+blockquote:before {
+    display: block;
+    content: "\201C";
+    font-size: 30px;
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    color: #7a7a7a;
+}
+blockquote cite {
+    color: #999999;
+    font-size: 14px;
+    display: block;
+    margin-top: 5px;
+    }
+     
+blockquote cite:before {
+    content: "\2014 \2009";
+}
+
+h1.co-title {margin-bottom: 0px !important; }
+p.title-splash {margin-top: 30px;}
+h4.splash {font-style: italic !important; font-family: 'Raleway';}
+
+a.contact-item {
+    text-decoration: none;
+    color: #000000;
+}
+
+#featured .wrapper .blurb h2 {
+    margin-bottom: 10px;
+  }
+  #featured .wrapper .blurb p {
+      margin-bottom: 10px;
+  }
+
+section#featured {
+    height: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+/* Button back to top */
+#btn-top {
+    position: fixed;
+    bottom: 20px;
+    right: 4%;
+    display: none;
+    padding: 0px;
+    border-radius: 50% !important;
+    width: 3rem;
+    height: 3rem;
+    z-index: 10;
+    --bs-btn-bg: #000000;
+    --bs-btn-border-color: #000000;
+}
+#btn-top:hover {
+    background-color: #cccccc !important;
+    border-color: #000 !important; }
+
+/* all butons */
+.btn-danger {
+    --bs-btn-bg: #000000;
+    --bs-btn-border-color: #000000;
+    border-radius: 0px;
+}
+
+.btn:hover {
+    color: #000000 !important;
+    background-color: transparent !important;
+    border-color: transparent !important;
+}
+.btn-danger {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #000000 !important;
+    --bs-btn-border-color: #000000 !important;}
+
+.modal-footer .btn {    --bs-btn-border-radius: 0px !important;}
+.modal-footer button.btn.btn-danger:hover {
+    background-color: #cccccc !important; }
+
+#hero header .nav-toggle {width: 100px !important;}
+
+.btn-primary {
+    --bs-btn-color: #000 !important;
+    --bs-btn-bg: transparent !important;
+    --bs-btn-border-color: transparent !important;
+    --bs-btn-hover-color: #000 !important;
+    --bs-btn-hover-bg: transparent !important;
+    --bs-btn-hover-border-color: transparent !important;
+    --bs-btn-focus-shadow-rgb: 49,132,253;
+    --bs-btn-active-color: ##000 !important;
+    --bs-btn-active-bg: transparent !important;
+    --bs-btn-active-border-color: transparent !important;
+    --bs-btn-active-shadow: 0 !important;
+    --bs-btn-disabled-color: #fff !important;
+    border-radius: 0px !important;
+}
+
+
+/* caret above menu */
+.dropdown-menu:before {
+content:"" !important;
+    position: absolute !important;
+    right: 34px !important;
+    top: -10px !important;
+    width: 0 !important;
+    height: 0 !important;
+    border-style: solid !important;
+    border-width: 0 10px 10px 10px !important;
+    border-color: transparent transparent #7F7F7F transparent !important;
+    z-index:9999 !important;
+}
+.dropdown-menu {
+--bs-dropdown-min-width: 5rem !important;
+--bs-dropdown-border-radius: 0px !important;
+    color: #111 !important;
+    font-size: 12px !important;
+    font-family: "Raleway",Helvetica,sans-serif !important; 
+    text-transform: uppercase !important;
+    text-decoration: none !important;
+    -webkit-transition: background-color .2s ease-in-out !important;
+    transition: background-color .2s ease-in-out !important;
+    transform: translate3d(-20px, 40px, 0px) !important;
+    margin-top: 8px !important;
+    --bs-dropdown-bg: #efefef !important;
+    --bs-dropdown-link-active-bg: #999 !important;
+}
+ul.dropdown-menu.show {inset: -10px auto auto 10px !important;}
+
+
+button.btn.btn-primary.more-info {
+    background: #000000;
+    color: #FFFFFF;
+    font-size: 14px;
+}
+
+button.btn.btn-primary.more-info:hover {
+    color: #000000 !important;
+    background-color: #ccc !important;
+    border-color: #ccc !important;
+}    
+
+#contact .wrapper .blurb {margin-top: 0px;}
+
+#gallery {
+    position: relative;
+    width: 1440px;
+    max-width: 95%;
+    height: 600px;
+    margin: 30px auto;
+    background-color: #efefef;
+    overflow: hidden;
+}
+
+br {
+content: "";
+margin: 2em;
+display: block;
+font-size: 30%;
+}
