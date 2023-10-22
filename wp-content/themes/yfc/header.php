@@ -41,35 +41,35 @@
     <!--<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/assets/favicon/yfc.ico" type="image/x-icon"/>-->
     <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/assets/favicon/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" sizes="57x57" href="<?php echo get_template_directory_uri(); ?>
-	/assets/favicon/apple-icon-57x57.png">
+    /assets/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="<?php echo get_template_directory_uri(); ?>
-	/assets/favicon/apple-icon-60x60.png">
+    /assets/favicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="<?php echo get_template_directory_uri(); ?>
-	/assets/favicon/apple-icon-72x72.png">
+    /assets/favicon/apple-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="76x76" href="<?php echo get_template_directory_uri(); ?>
-	/assets/favicon/apple-icon-76x76.png">
+    /assets/favicon/apple-icon-76x76.png">
     <link rel="apple-touch-icon" sizes="114x114" href="<?php echo get_template_directory_uri(); ?>
-	/assets/favicon/apple-icon-114x114.png">
+    /assets/favicon/apple-icon-114x114.png">
     <link rel="apple-touch-icon" sizes="120x120" href="<?php echo get_template_directory_uri(); ?>
-	/assets/favicon/apple-icon-120x120.png">
+    /assets/favicon/apple-icon-120x120.png">
     <link rel="apple-touch-icon" sizes="144x144" href="<?php echo get_template_directory_uri(); ?>
-	/assets/favicon/apple-icon-144x144.png">
+    /assets/favicon/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="<?php echo get_template_directory_uri(); ?>
-	/assets/favicon/apple-icon-152x152.png">
+    /assets/favicon/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>
-	/assets/favicon/apple-icon-180x180.png">
+    /assets/favicon/apple-icon-180x180.png">
     <link rel="icon" type="image/png" sizes="192x192" href="<?php echo get_template_directory_uri(); ?>
-	/assets/favicon/android-icon-192x192.png">
+    /assets/favicon/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_template_directory_uri(); ?>
-	/assets/favicon/favicon-32x32.png">
+    /assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="<?php echo get_template_directory_uri(); ?>
-	/assets/favicon/favicon-96x96.png">
+    /assets/favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri(); ?>
-	/assets/favicon/favicon-16x16.png">
+    /assets/favicon/favicon-16x16.png">
     <link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/assets/favicon/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>
-	/assets/favicon/ms-icon-144x144.png">
+    /assets/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <!--<link rel="shortcut icon" href="yfc.ico" type="image/x-icon" />-->
     <link rel="mask-icon" href="<?php echo get_template_directory_uri(); ?>/assets/favicon/safari-pinned-tab.svg"
@@ -85,29 +85,17 @@
     <section id="hero" class="your-hero">
         <div class="your-herodd"></div>
         <header>
-            <!------------ BEGIN MENU ---------------->
-            <div class="dropdown">
+            <div class="dropdown primary-menu">
                 <button type="button" class="btn btn-primary nav-toggle" data-bs-toggle="dropdown" id="menu-drop">
                     Menu<span></span>
                 </button>
-                <ul class="dropdown-menu" aria-labelledby="menu-drop">
-                    <li><a class="dropdown-item" href="#about">About</a></li>
-                    <li><a class="dropdown-item" href="#gallery">Gallery</a></li>
-                    <li><a class="dropdown-item" href="#featured">What</a></li>
-                    <li><a class="dropdown-item" href="#team">Who</a></li>
-                    <li><a class="dropdown-item" href="#contact">Contact</a></li>
-                </ul>
+                <?php
+                wp_nav_menu(
+                    array(
+                        'theme_location' => 'primary',
+                        'menu_class' => 'dropdown-menu',
+                    )
+                );
+                ?>
             </div>
-            <!------------ END MENU ---------------->
         </header>
-        <div class="wrapper">
-            <div class="welcome">
-                <h1 class="co-title"><strong>Youth Fencing</strong> Chicago</h1>
-                <h4 class="splash">Giving back through fencing</h4>
-                <p class="title-splash">Fencing is more than just a sport, it's a developmental tool that carries great
-                    benefits for the growth of young children.</p>
-            </div>
-            <div class="photographer"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/hero.png"
-                    alt="fencing-mask"></div>
-        </div>
-    </section>
