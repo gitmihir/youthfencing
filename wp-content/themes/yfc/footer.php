@@ -1,14 +1,3 @@
-<?php
-/**
- * The template for displaying the footer
- *
- * Contains the closing of the #content div and all content after
- *
- * @package WordPress
- * @subpackage Twenty_Sixteen
- * @since Twenty Sixteen 1.0
- */
-?>
 <section id="contact">
     <div class="wrapper">
         <div class="blurb">
@@ -85,40 +74,75 @@
     </div>
 
 </section>
-
+<div class="modal fade" id="tate">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">The Who</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="rowmode">
+                    <div class="columnmode1 right">
+                        <img class="imgw100" src="<?php echo get_template_directory_uri(); ?>/assets/img/team2.jpg"
+                            alt="Tate" />
+                        <p class="title">Tate</p>
+                        <p class="subtitle">Co-Founder</p>
+                    </div>
+                    <div class="columnmode2 left">
+                        <p class="text">I've been working with the community since I
+                            was pretty young. My parents got involved with Cradles
+                            to Crayons early on and I followed. However, now that
+                            I'm older, I still wanted to help, but in my own
+                            way.<br /><br />
+                            I've created the Tate's Fence-A-Thon fundraiser, and it
+                            was great raising so much money for charity! However, I
+                            wanted to do something that would benefit the community
+                            long term. With so much good coming from fencing, and
+                            with the fencing experience I have, I think this will
+                            make a tremendous impact in the community</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- Detect Opera mini -->
 <script type="text/javascript">
-function o() {
-    var isMobile = {
-        Opera: function() {
-            return navigator.userAgent.match(/Opera Mini/i);
-        },
-    };
-    if (isMobile.Opera()) alert('Looks like you are using Opera Mini, please use a different browser');
-}
-window.onload = o;
+    function o() {
+        var isMobile = {
+            Opera: function () {
+                return navigator.userAgent.match(/Opera Mini/i);
+            },
+        };
+        if (isMobile.Opera()) alert('Looks like you are using Opera Mini, please use a different browser');
+    }
+    window.onload = o;
 </script>
 
 
 <!-- Bootstarp 5 Back to Top -->
 <script>
-window.addEventListener('load', function() {
-    let btnTop = document.getElementById("btn-top");
-    // display the button when user scrolls more than 20px
-    window.onscroll = function() {
-        if (
-            document.body.scrollTop > 20 || document.documentElement.scrollTop > 20
-        ) {
-            btnTop.style.display = "block";
-        } else {
-            btnTop.style.display = "none";
-        }
-    };
-    btnTop.addEventListener("click", function() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-    });
-})
+    window.addEventListener('load', function () {
+        let btnTop = document.getElementById("btn-top");
+        // display the button when user scrolls more than 20px
+        window.onscroll = function () {
+            if (
+                document.body.scrollTop > 20 || document.documentElement.scrollTop > 20
+            ) {
+                btnTop.style.display = "block";
+            } else {
+                btnTop.style.display = "none";
+            }
+        };
+        btnTop.addEventListener("click", function () {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        });
+    })
 </script>
 <?php wp_footer(); ?>
 </body>
