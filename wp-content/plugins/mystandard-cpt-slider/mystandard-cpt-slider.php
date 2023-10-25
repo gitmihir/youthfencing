@@ -13,7 +13,8 @@
 /**
  * Custom Post Types
  */
-function standard_post_type_for_slider() {
+function standard_post_type_for_slider()
+{
     $supports = array(
         'title',
         'editor',
@@ -55,7 +56,48 @@ function standard_post_type_for_slider() {
 
 add_action('init', 'standard_post_type_for_slider');
 
+function standard_post_type_for_team()
+{
+    $supports = array(
+        'title',
+        'editor',
+        'author',
+        'thumbnail',
+        'excerpt',
+        'custom-fields',
+        'comments',
+        'revisions',
+        'post-formats',
+    );
+    $labels = array(
+        'name' => _x('Team Member', 'plural'),
+        'singular_name' => _x('Team Member', 'singular'),
+        'menu_name' => _x('Team Member', 'admin menu'),
+        'name_admin_bar' => _x('Team Member', 'admin bar'),
+        'add_new' => _x('Add New', 'add new'),
+        'add_new_item' => __('Add New Team Member'),
+        'new_item' => __('New Team Member'),
+        'edit_item' => __('Edit Team Member'),
+        'view_item' => __('View Team Member'),
+        'all_items' => __('All Team Member'),
+        'search_items' => __('Search Team Member'),
+        'not_found' => __('No Team Member found.'),
+    );
+    $args = array(
+        'supports' => $supports,
+        'labels' => $labels,
+        'menu_position' => 99,
+        'menu_icon' => 'dashicons-images-alt2',
+        'public' => true,
+        'query_var' => true,
+        'rewrite' => array('slug' => 'team-member'),
+        'has_archive' => true,
+        'hierarchical' => false,
+    );
+    register_post_type('team-member', $args);
+}
 
+add_action('init', 'standard_post_type_for_team');
 
 
 /* Custom Post type end */

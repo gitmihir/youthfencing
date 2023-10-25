@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Twenty Sixteen functions and definitions
  *
@@ -32,7 +33,7 @@ if (version_compare($GLOBALS['wp_version'], '4.4-alpha', '<')) {
 	require get_template_directory() . '/inc/back-compat.php';
 }
 
-if (!function_exists('twentysixteen_setup')):
+if (!function_exists('twentysixteen_setup')) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -315,7 +316,7 @@ function twentysixteen_widgets_init()
 }
 add_action('widgets_init', 'twentysixteen_widgets_init');
 
-if (!function_exists('twentysixteen_fonts_url')):
+if (!function_exists('twentysixteen_fonts_url')) :
 	/**
 	 * Register fonts for Twenty Sixteen.
 	 *
@@ -649,8 +650,8 @@ function standard_theme_style_scripts()
 	wp_register_script('bootstrap-min-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js', '', '5.3.2', true);
 	wp_enqueue_script('bootstrap-min-js');
 
-	// wp_register_script('functions-js', get_template_directory_uri() . '/assets/js/functions-min.js', '', '', true);
-	// wp_enqueue_script('functions-js');
+	wp_register_script('custom-js', get_template_directory_uri() . '/assets/js/custom.js', '', '', true);
+	wp_enqueue_script('custom-js');
 }
 
 add_action('wp_enqueue_scripts', 'standard_theme_style_scripts');

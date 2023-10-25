@@ -1,4 +1,7 @@
 <?php
+/*
+ * Template Name: Redirection Template
+ */
 $sendy_url = 'https://youthfencingchicago.com/newsletter';
 $list = 'KCKtMVgN8R9Nct3r892JSuJQ';
 $api_key = 'B2gtq3pwE2LGNYDfwuus';

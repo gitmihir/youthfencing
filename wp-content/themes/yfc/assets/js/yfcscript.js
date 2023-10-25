@@ -14,7 +14,7 @@ window.addEventListener("load", (event) => {
 
     let data = {
       name: name,
-      email: email,
+      email: email,›
       note: note,
       capt: grecaptcha.getResponse(),
     };
