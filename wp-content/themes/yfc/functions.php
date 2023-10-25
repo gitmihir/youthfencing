@@ -632,14 +632,14 @@ function standard_theme_style_scripts()
 	/*
 	 * Standard Js
 	 */
-	wp_register_script('recaptcha-ui-js', 'https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit', '', '', true);
-	wp_enqueue_script('recaptcha-ui-js');
+	// wp_register_script('recaptcha-ui-js', 'https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit', '', '', true);
+	// wp_enqueue_script('recaptcha-ui-js');
 
-	wp_register_script('axios-ui-js', 'https://unpkg.com/axios/dist/axios.min.js', '', '', true);
-	wp_enqueue_script('axios-ui-js');
+	// wp_register_script('axios-ui-js', 'https://unpkg.com/axios/dist/axios.min.js', '', '', true);
+	// wp_enqueue_script('axios-ui-js');
 
-	wp_register_script('api-ui-js', 'https://www.google.com/recaptcha/api.js', '', '', true);
-	wp_enqueue_script('api-ui-js');
+	// wp_register_script('api-ui-js', 'https://www.google.com/recaptcha/api.js', '', '', true);
+	// wp_enqueue_script('api-ui-js');
 
 	wp_register_script('jquery-ui-js', 'https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js', '', '3.6.0', true);
 	wp_enqueue_script('jquery-ui-js');
