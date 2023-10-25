@@ -48,12 +48,10 @@
 <div class="modal fade" id="newsletter" class="newsletter1">
     <div class="modal-dialog">
         <div class="modal-content ">
-            <!-- Modal Header -->
             <div class="modal-header ">
                 <h7 class="modal-title">Stay <strong>In Touch</strong></h7>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
-            <!-- BEGIN Modal CONTENT  -->
             <div class="modal-body">
                 <main>
                     <div class="newsletter">
