@@ -2,11 +2,10 @@
     <div class="wrapper">
         <div class="blurb">
             <h2><strong>Say</strong> Hello</h2>
-            <p>Fencing is such an incredible sport. It's one of the few sport that not only trains the body, but
-                also teaches the mind. It would be great to be able to bring fencing into your school or
-                organization. Feel free to get in touch with us if you have any questions</p>
+            <?php if (get_option('contact_line')) { ?>
+                <p><?php echo get_option('contact_line'); ?></p>
+            <?php } ?>
         </div>
-
         <form id="form" method="post" accept-charset="UTF-8">
             <input type="text" id="name" name="name" placeholder="Name" required="" />
             <input type="email" id="email" name="email" placeholder="Email" required="" />
@@ -16,19 +15,17 @@
                 <div class="g-recaptcha" data-sitekey="6LdGoD4oAAAAALA5-ENyLGrDn3UaB0JIcfzuBKuR"></div>
             </div>
             <br />
-            <button id="send-button" type="submit">Send</button>
+            <button id="send-button">Send</button>
 
             <div class="loading">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/loading.gif" id="loading-img" alt="loading-image">
             </div>
             <output id="info" class="output"></output>
         </form>
-        <!----------- BEGIN NEWSLETTER info ----------->
         <div class="">
             <div class="stay">
                 <div class="news">
                     <p class="title11">Stay <strong>in Touch</strong>:
-                        <!-- Trigger the modal with a button -->
                         <button type="button" class="btn btn-primary more-info" data-bs-toggle="modal" data-bs-target="#newsletter">
                             Newsletter
                         </button>
@@ -37,13 +34,39 @@
             </div>
         </div>
     </div>
-    <div class="copy">
-        <p class="copyright" style="text-align: center;">
-            <a class="dropdown-item" href="#hero"><strong>Youth Fencing</strong> Chicago, LLC</a>&copy; 2023 <br />
-            501(c)(3) not-for-profit
-        </p>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="adv_sec">
+                <?php if (get_option('advisory_title')) { ?>
+                    <h3 class="adv_title"><?php echo get_option('advisory_title'); ?></h3>
+                <?php } ?>
+                <ul class="adv_list">
+                    <?php if (get_option('advisory_first_name')) { ?>
+                        <li><?php echo get_option('advisory_first_name'); ?></li>
+                    <?php }
+                    if (get_option('advisory_second_name')) { ?>
+                        <li><?php echo get_option('advisory_second_name'); ?></li>
+                    <?php }
+                    if (get_option('advisory_third_name')) { ?>
+                        <li><?php echo get_option('advisory_third_name'); ?></li>
+                    <?php }
+                    if (get_option('advisory_fourth_name')) { ?>
+                        <li><?php echo get_option('advisory_fourth_name'); ?></li>
+                    <?php }
+                    if (get_option('advisory_fifth_name')) { ?>
+                        <li><?php echo get_option('advisory_fifth_name'); ?></li>
+                    <?php } ?>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <?php if (get_option('copyright_line')) { ?>
+                <p class="add_sec">
+                    <?php echo get_option('copyright_line'); ?>
+                </p>
+            <?php } ?>
+        </div>
     </div>
-
 </section>
 <div class="modal fade" id="newsletter" class="newsletter1">
     <div class="modal-dialog">
@@ -58,22 +81,14 @@
                         <form action="<?php echo get_site_url(); ?>/do-not-touch-this-page" method="POST" accept-charset="utf-8" name="signup-form" id="signup-form" class="form-inline">
                             <div class="form-group">
                                 <span id="name-info" class="info"></span><br />
-                                <input type="name" class="form-control" id="name" placeholder="Enter Name" name="name" />
+                                <input type="name" class="form-control" id="fname" placeholder="Enter Name" name="name-news" />
                             </div>
 
                             <div class="form-group">
                                 <span id="email-info" class="info"></span><br />
-                                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" />
+                                <input type="email" class="form-control" id="femail" placeholder="Enter email" name="email-news" />
                             </div>
-                            <div style="display: none !important">
-                                <input type="text" name="hp" id="hp" tabindex="-1" autocomplete="off" placeholder="123-456-7890" /><br /><br />
-                            </div>
-                            <div class="input-field" style="display: none !important">
-                                <input type="text" name="contact" id="contact" value="" />
-                            </div>
-                            <div class="text-field">
-                                <input type="text" name="Email2" id="Email2" value="your@email.com" />
-                            </div>
+                            
                             <div class="form-group">
                                 <span id="button-info" class="button-info"></span><br />
                                 <button type="submit" class="btn btn-danger">Subscribe</button>

@@ -168,7 +168,7 @@ while (have_posts()) :
                         <?php while ($member_query->have_posts()) : $member_query->the_post(); ?>
                             <div class="column1">
                                 <div class="card1">
-                                    <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php echo get_the_title(); ?>" style="width:100%" class="" data-bs-toggle="modal" data-bs-target="#tate">
+                                    <img src="<?php echo get_the_post_thumbnail_url(); ?>" data-position="<?php echo get_field('member_position'); ?>" data-image="<?php echo get_the_post_thumbnail_url(); ?>" data-title="<?php echo get_the_title(); ?>" data-content="<?php echo get_the_content(); ?>" alt="<?php echo get_the_title(); ?>" style="width:100%" class="more-infdata" data-bs-toggle="modal" data-bs-target="#tate">
                                     <div class="container1">
                                         <?php if (get_the_title()) { ?>
                                             <h2><?php echo get_the_title(); ?></h2>

@@ -1,0 +1,49 @@
+.contact_info,
+.social_info,
+.footer_info,
+.theme_colors,
+.pages_options,
+.car_options{
+    width: 100%;
+    float: left;
+    background: #122550;
+    padding: 5px;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 20px;
+    border-bottom: 1px solid #ffffff;
+}
+.sidebarclass{
+    width: 100%;
+    float: left;
+    background: #122550;
+    height: 1000px;
+}
+.contactdiv,
+.socialdiv,
+.footerdiv,
+.colordiv,
+.btndiv,
+.page_div,
+.car_div{
+    width: 100%;
+    float: left;
+}
+.menuactiveclass{
+    color: #000000;
+    background: #d9d9d9;
+}
+.theme_options_header{
+    padding: 10px;
+    background: #122550;
+    color: #ffffff;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+.btndiv .row .col-md-12 .submit{
+    text-align: right;
+}
+.btndiv .row .col-md-12 .submit #submit{
+    border: 0;
+    border-radius: 0;
+}

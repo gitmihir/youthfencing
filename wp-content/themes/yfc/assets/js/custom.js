@@ -126,6 +126,7 @@ window.addEventListener("load", function () {
 $(document).ready(function () {
   $(".text-field").hide();
   $("#signup-form").submit(function (e) {
+    debugger
     e.preventDefault();
 
     var valid;
@@ -161,31 +162,31 @@ $(document).ready(function () {
     $(".demoInputBox").css("background-color", "");
     $(".info").html("");
 
-    if (!$("#name").val()) {
+    if (!$("#fname").val()) {
       $("#name-info").html("(required)");
       $("#name-info").css("color", "red");
       $("#name-info").css("font-family", "Raleway");
       $("#name-info").css("font-size", "16px");
-      $("#name").css("border-color", "red");
+      $("#fname").css("border-color", "red");
       valid = false;
     }
-    if (!$("#email").val()) {
+    if (!$("#femail").val()) {
       $("#email-info").html("(required)");
       $("#email-info").css("color", "red");
       $("#email-info").css("font-family", "Raleway");
       $("#email-info").css("font-size", "16px");
-      $("#email").css("border-color", "red");
+      $("#femail").css("border-color", "red");
       valid = false;
     }
     if (
-      !$("#email")
+      !$("#femail")
         .val()
         .match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/)
     ) {
       $("#email-info").html("(invalid)");
       $("#email-info").css("color", "red");
-      $("#email").css("background-color", "#FFFFDF");
-      $("#email").css("border-color", "red");
+      $("#femail").css("background-color", "#FFFFDF");
+      $("#femail").css("border-color", "red");
       valid = false;
     }
     return valid;
@@ -197,4 +198,27 @@ $(document).ready(function () {
       $(this).css("border", "1px solid #eeeeee");
     }
   });
+});
+$(document).ready(function () {
+  function e() {
+    $(".nav-toggle").click(function () {
+      $(".nav").toggleClass("open");
+    });
+  }
+
+  function s() {
+    $('a[href^="#"]').click(function (e) {
+      var s = $($(this).attr("href"));
+      s.length &&
+        (e.preventDefault(),
+        $("html, body").animate(
+          {
+            scrollTop: s.offset().top - 15,
+          },
+          300
+        )),
+        $(".nav").toggleClass("open");
+    });
+  }
+  e(), s();
 });
