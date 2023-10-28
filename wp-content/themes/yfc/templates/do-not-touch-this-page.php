@@ -49,7 +49,7 @@ if ($_POST['contact'] == '' && $_POST['Email2'] == 'your@email.com') {
 
 		if ($sendresult) {
 			if ($sendresult == "Some fields are missing.") {
-				echo "Please fill Name and Email";
+				echo "Please fill Name and Email2";
 			} else if ($sendresult == "Invalid email address.") {
 				echo "Invalid email address";
 			} else if ($sendresult == "Invalid list ID.") {
