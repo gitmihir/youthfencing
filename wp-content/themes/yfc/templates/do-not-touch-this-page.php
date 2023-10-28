@@ -3,14 +3,14 @@
  * Template Name: Redirection Template
  */
 if ($_POST['contact'] == '' && $_POST['Email2'] == 'your@email.com') {
-	if ((isset($_POST['name']) && $_POST['name'] != '')  && (isset($_POST['email']) && $_POST['email'] != '')) {
+	if (isset($_POST['name-news']) && isset($_POST['email-news'])) {
 		$sendy_url = 'https://youthfencingchicago.com/newsletter';
 		$list = 'KCKtMVgN8R9Nct3r892JSuJQ';
 		$api_key = 'B2gtq3pwE2LGNYDfwuus';
 		//$name 	=  filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
 		//$email 	=  filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
-		$name = $_POST['name'];
-		$email = $_POST['email'];
+		$name = $_POST['name-news'];
+		$email = $_POST['email-news'];
 		$hp = $_POST['hp'];
 		$IP = $_SERVER['REMOTE_ADDR'];
 		$Referrer = $_SERVER['HTTP_REFERER'];
