@@ -93,16 +93,12 @@
                                 <input type="email" class="form-control" id="femail" placeholder="Enter email"
                                     name="email-news" />
                             </div>
-                            <div style="display: none !important">
-                                <input type="text" name="hp" id="hp" tabindex="-1" autocomplete="off"
-                                    placeholder="123-456-7890" /><br /><br />
-                            </div>
-                            <div class="input-field" style="display: none !important">
-                                <input type="text" name="contact" id="contact" value="" />
-                            </div>
-                            <div class="text-field">
-                                <input type="text" name="Email2" id="Email2" value="your@email.com" />
-                            </div>
+
+                            <input type="hidden" name="hp" id="hp" tabindex="-1" autocomplete="off"
+                                placeholder="123-456-7890" />
+                            <input type="hidden" name="contact" id="contact" value="" />
+                            <input type="hidden" name="Email2" id="Email2" value="your@email.com" />
+
                             <div class="form-group">
                                 <span id="button-info" class="button-info"></span><br />
                                 <button type="submit" class="btn btn-danger">Subscribe</button>

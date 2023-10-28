@@ -28,7 +28,6 @@ jQuery(document).ready(function () {
 });
 
 $("#send-button").click(function(){
- 
     const URL =
       "https://3hj72nxrhw4xjmnk7jq4ln4x440oimyv.lambda-url.us-east-1.on.aws/"; //All4b-lamb2-Api //All4b-lamb2-Api
     let form = document.getElementById("form");
@@ -159,6 +158,7 @@ $(document).ready(function () {
   });
 
   function validateContact() {
+    debugger
     var valid = true;
     $(".demoInputBox").css("background-color", "");
     $(".info").html("");

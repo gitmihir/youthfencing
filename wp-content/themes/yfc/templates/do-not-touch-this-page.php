@@ -5,7 +5,10 @@
 
 
 if ($_POST['contact'] == '' && $_POST['Email2'] == 'your@email.com') {
-
+echo "<pre>";
+print_r($_POST);
+echo "<pre>";
+exit;
 	if ((isset($_POST['name']) && $_POST['name'] != '')  && (isset($_POST['email']) && $_POST['email'] != '')) {
 		$sendy_url = 'https://youthfencingchicago.com/newsletter';
 		$list = 'KCKtMVgN8R9Nct3r892JSuJQ';
