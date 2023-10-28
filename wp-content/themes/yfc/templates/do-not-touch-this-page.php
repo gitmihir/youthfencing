@@ -10,8 +10,10 @@ if ($_POST['contact'] == '' && $_POST['Email2'] == 'your@email.com') {
 		$sendy_url = 'https://youthfencingchicago.com/newsletter';
 		$list = 'KCKtMVgN8R9Nct3r892JSuJQ';
 		$api_key = 'B2gtq3pwE2LGNYDfwuus';
-		$name 	=  filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
-		$email 	=  filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+		//$name 	=  filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+		//$email 	=  filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+		$name = $_POST['name'];
+		$email = $_POST['email'];
 		$hp = $_POST['hp'];
 		$IP = $_SERVER['REMOTE_ADDR'];
 		$Referrer = $_SERVER['HTTP_REFERER'];
