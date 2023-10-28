@@ -2,13 +2,7 @@
 /*
  * Template Name: Redirection Template
  */
-
-
 if ($_POST['contact'] == '' && $_POST['Email2'] == 'your@email.com') {
-echo "<pre>";
-print_r($_POST);
-echo "<pre>";
-exit;
 	if ((isset($_POST['name']) && $_POST['name'] != '')  && (isset($_POST['email']) && $_POST['email'] != '')) {
 		$sendy_url = 'https://youthfencingchicago.com/newsletter';
 		$list = 'KCKtMVgN8R9Nct3r892JSuJQ';
@@ -32,6 +26,7 @@ exit;
 				'boolean' => 'true'
 			)
 		);
+
 		$sendopts = array(
 			'http' => array(
 				'method'  => 'POST',
@@ -39,8 +34,17 @@ exit;
 				'content' => $sendpostdata
 			)
 		);
-
-		$sendcontext  = stream_context_create($sendopts);
+		echo $sendpostdata;
+		echo "</br>";
+		echo "<pre>";
+		print_r($sendpostdata);
+		echo "</pre>";
+		echo "</br>";
+		echo "<pre>";
+		print_r($_POST);
+		echo "</pre>";
+		exit();
+		$sendcontext = stream_context_create($sendopts);
 		$sendresult = file_get_contents($sendy_url . '/subscribe', false, $sendcontext);
 
 		if ($sendresult) {
