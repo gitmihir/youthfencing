@@ -3,7 +3,7 @@
         <div class="blurb">
             <h2><strong>Say</strong> Hello</h2>
             <?php if (get_option('contact_line')) { ?>
-                <p><?php echo get_option('contact_line'); ?></p>
+            <p><?php echo get_option('contact_line'); ?></p>
             <?php } ?>
         </div>
         <form id="form" method="post" accept-charset="UTF-8">
@@ -18,7 +18,8 @@
             <button id="send-button">Send</button>
 
             <div class="loading">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/loading.gif" id="loading-img" alt="loading-image">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/loading.gif" id="loading-img"
+                    alt="loading-image">
             </div>
             <output id="info" class="output"></output>
         </form>
@@ -26,7 +27,8 @@
             <div class="stay">
                 <div class="news">
                     <p class="title11">Stay <strong>in Touch</strong>:
-                        <button type="button" class="btn btn-primary more-info" data-bs-toggle="modal" data-bs-target="#newsletter">
+                        <button type="button" class="btn btn-primary more-info" data-bs-toggle="modal"
+                            data-bs-target="#newsletter">
                             Newsletter
                         </button>
                     </p>
@@ -38,32 +40,32 @@
         <div class="col-md-6">
             <div class="adv_sec">
                 <?php if (get_option('advisory_title')) { ?>
-                    <h3 class="adv_title"><?php echo get_option('advisory_title'); ?></h3>
+                <h3 class="adv_title"><?php echo get_option('advisory_title'); ?></h3>
                 <?php } ?>
                 <ul class="adv_list">
                     <?php if (get_option('advisory_first_name')) { ?>
-                        <li><?php echo get_option('advisory_first_name'); ?></li>
+                    <li><?php echo get_option('advisory_first_name'); ?></li>
                     <?php }
                     if (get_option('advisory_second_name')) { ?>
-                        <li><?php echo get_option('advisory_second_name'); ?></li>
+                    <li><?php echo get_option('advisory_second_name'); ?></li>
                     <?php }
                     if (get_option('advisory_third_name')) { ?>
-                        <li><?php echo get_option('advisory_third_name'); ?></li>
+                    <li><?php echo get_option('advisory_third_name'); ?></li>
                     <?php }
                     if (get_option('advisory_fourth_name')) { ?>
-                        <li><?php echo get_option('advisory_fourth_name'); ?></li>
+                    <li><?php echo get_option('advisory_fourth_name'); ?></li>
                     <?php }
                     if (get_option('advisory_fifth_name')) { ?>
-                        <li><?php echo get_option('advisory_fifth_name'); ?></li>
+                    <li><?php echo get_option('advisory_fifth_name'); ?></li>
                     <?php } ?>
                 </ul>
             </div>
         </div>
         <div class="col-md-6">
             <?php if (get_option('copyright_line')) { ?>
-                <p class="add_sec">
-                    <?php echo get_option('copyright_line'); ?>
-                </p>
+            <p class="add_sec">
+                <?php echo get_option('copyright_line'); ?>
+            </p>
             <?php } ?>
         </div>
     </div>
@@ -78,17 +80,29 @@
             <div class="modal-body">
                 <main>
                     <div class="newsletter">
-                        <form action="<?php echo get_site_url(); ?>/do-not-touch-this-page" method="POST" accept-charset="utf-8" name="signup-form" id="signup-form" class="form-inline">
+                        <form action="<?php echo get_site_url(); ?>/do-not-touch-this-page" method="POST"
+                            accept-charset="utf-8" name="signup-form" id="signup-form" class="form-inline">
                             <div class="form-group">
                                 <span id="name-info" class="info"></span><br />
-                                <input type="name" class="form-control" id="fname" placeholder="Enter Name" name="name-news" />
+                                <input type="name" class="form-control" id="fname" placeholder="Enter Name"
+                                    name="name-news" />
                             </div>
 
                             <div class="form-group">
                                 <span id="email-info" class="info"></span><br />
-                                <input type="email" class="form-control" id="femail" placeholder="Enter email" name="email-news" />
+                                <input type="email" class="form-control" id="femail" placeholder="Enter email"
+                                    name="email-news" />
                             </div>
-                            
+                            <div style="display: none !important">
+                                <input type="text" name="hp" id="hp" tabindex="-1" autocomplete="off"
+                                    placeholder="123-456-7890" /><br /><br />
+                            </div>
+                            <div class="input-field" style="display: none !important">
+                                <input type="text" name="contact" id="contact" value="" />
+                            </div>
+                            <div class="text-field">
+                                <input type="text" name="Email2" id="Email2" value="your@email.com" />
+                            </div>
                             <div class="form-group">
                                 <span id="button-info" class="button-info"></span><br />
                                 <button type="submit" class="btn btn-danger">Subscribe</button>

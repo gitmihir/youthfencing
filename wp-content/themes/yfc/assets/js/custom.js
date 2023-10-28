@@ -36,7 +36,7 @@ window.addEventListener("load", (event) => {
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
-
+debugger;
     let name = document.getElementById("name").value;
     let email = document.getElementById("email").value;
     let note = document.getElementById("message").value;
