@@ -34,16 +34,6 @@ if ($_POST['contact'] == '' && $_POST['Email2'] == 'your@email.com') {
 				'content' => $sendpostdata
 			)
 		);
-		echo $sendpostdata;
-		echo "</br>";
-		echo "<pre>";
-		print_r($sendpostdata);
-		echo "</pre>";
-		echo "</br>";
-		echo "<pre>";
-		print_r($_POST);
-		echo "</pre>";
-		exit();
 		$sendcontext = stream_context_create($sendopts);
 		$sendresult = file_get_contents($sendy_url . '/subscribe', false, $sendcontext);
 
