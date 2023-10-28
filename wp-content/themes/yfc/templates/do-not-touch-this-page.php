@@ -8,9 +8,9 @@ $api_key = 'B2gtq3pwE2LGNYDfwuus';
 $recaptcha_secret = "6LdGoD4oAAAAAI-9666VkhutEosm-tL_9ROPHQvs";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-	$response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=" . $recaptcha_secret . "&response=" . $_POST['g-recaptcha-response']);
-	$response = json_decode($response, true);
-	if ($response["success"] === true) {
+	//$response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=" . $recaptcha_secret . "&response=" . $_POST['g-recaptcha-response']);
+	//$response = json_decode($response, true);
+	//if ($response["success"] === true) {
 		if ($_POST['contact'] == '' && $_POST['Email2'] == 'your@email.com') {
 			if ((isset($_POST['name-news']) && $_POST['name-news'] != '')  && (isset($_POST['email-news']) && $_POST['email-news'] != '')) {
 
@@ -61,8 +61,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 		} else {
 			echo "Please enter the correct Email";
 		}
-	} else {
-		echo "Please make sure you're not a Robot";
-	}
+	//}
 } else {
 }
