@@ -74,23 +74,98 @@ Use it to make something cool, have fun, and share what you've learned with othe
   border: var(--bs-dropdown-border-width) solid var(--bs-dropdown-border-color);
   border-radius: var(--bs-dropdown-border-radius);
 }
-.add_sec{
-    text-align: right;
-    font-size: 14px;
-    line-height: 14px;
-    color: #000000;
-    font-weight: 500;
-    margin-left: 30px;
-    margin-right: 30px;
-    margin-top: 30px;
+.add_sec {
+  text-align: right;
+  font-size: 14px;
+  line-height: 14px;
+  color: #000000;
+  font-weight: 500;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 30px;
 }
-.adv_sec{
+.adv_sec {
   text-align: left;
-    font-size: 14px;
-    line-height: 19px;
-    color: #000000;
-    font-weight: 500;
-    margin-left: 30px;
-    margin-right: 30px;
-    margin-top: 30px;
+  font-size: 14px;
+  line-height: 19px;
+  color: #000000;
+  font-weight: 500;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 30px;
+}
+
+/* Form CSS */
+.fm-header {
+  text-align: center;
+}
+.fm-center-content {
+  width: 100%;
+  float: left;
+  text-align: center;
+}
+.fm-cc-second p {
+  line-height: 13px;
+  text-align: left;
+  margin-left: 9rem;
+}
+.fm-left-image {
+  text-align: center;
+}
+.fm-left-image .limg {
+  width: 40%;
+}
+.fm-cc-third p {
+  text-align: center;
+  line-height: 10px;
+}
+.section-main {
+  margin-left: 10rem;
+  margin-right: 10rem;
+}
+.fm-content-i {
+  text-align: center;
+}
+.fm-align {
+  text-align: right;
+}
+.fm-table th,
+.fm-table td {
+  padding: 0 !important;
+  border: none;
+}
+.fm-custom-input {
+  border: 0;
+  border-bottom: 1px solid #000000;
+  outline: none;
+}
+.fm-red {
+  color: red !important;
+}
+.fm-custom-text {
+  line-height: 10px;
+  font-size: 11px;
+  color: #000000;
+}
+.fm-table-head {
+  text-align: center;
+}
+.fm-custom-table {
+  border: 2px solid #000000 !important;
+}
+
+.fm-custom-table tr,
+.fm-custom-table th {
+  border: 1px solid #000000 !important;
+}
+.fm-custom-width {
+  width: 20%;
+}
+.fm-align-c {
+  text-align: center;
+  background-color: #cccccc !important;
+}
+.fm-bottom-border-remove {
+  border-bottom-color: #cccccc !important;
+  border-right-color: #000000 !important;
 }

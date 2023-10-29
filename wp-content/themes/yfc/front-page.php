@@ -193,6 +193,43 @@ while (have_posts()) :
             </div>
         </div>
     </section>
+    <section id="contact">
+        <div class="wrapper">
+            <div class="blurb">
+                <h2><strong>Say</strong> Hello</h2>
+                <?php if (get_option('contact_line')) { ?>
+                    <p><?php echo get_option('contact_line'); ?></p>
+                <?php } ?>
+            </div>
+            <form id="form" method="post" accept-charset="UTF-8">
+                <input type="text" id="name" name="name" placeholder="Name" required="" />
+                <input type="email" id="email" name="email" placeholder="Email" required="" />
+                <textarea id="message" name="message" placeholder="Message" required=""></textarea>
+
+                <div id="recaptcha">
+                    <div class="g-recaptcha" data-sitekey="6LdGoD4oAAAAALA5-ENyLGrDn3UaB0JIcfzuBKuR"></div>
+                </div>
+                <br />
+                <button id="send-button">Send</button>
+
+                <div class="loading">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/loading.gif" id="loading-img" alt="loading-image">
+                </div>
+                <output id="info" class="output"></output>
+            </form>
+            <div class="">
+                <div class="stay">
+                    <div class="news">
+                        <p class="title11">Stay <strong>in Touch</strong>:
+                            <button type="button" class="btn btn-primary more-info" data-bs-toggle="modal" data-bs-target="#newsletter">
+                                Newsletter
+                            </button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 <?php
 endwhile;
 wp_reset_query();

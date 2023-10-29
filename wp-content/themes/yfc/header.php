@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying the header
  *
@@ -17,16 +18,14 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
-    <?php if (is_singular() && pings_open(get_queried_object())): ?>
-    <link rel="pingback" href="<?php echo esc_url(get_bloginfo('pingback_url')); ?>">
+    <?php if (is_singular() && pings_open(get_queried_object())) : ?>
+        <link rel="pingback" href="<?php echo esc_url(get_bloginfo('pingback_url')); ?>">
     <?php endif; ?>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description"
-        content="Youth Fencing Outreach and Mentoring. Giving back through fencing. Learn to fence." />
-    <meta name="keywords"
-        content="fencing, youth, chicago, USA Fencing, charity, non-profit, giving back, community, learn to fence, Tate Nguyen, Ella Nguyen" />
+    <meta name="description" content="Youth Fencing Outreach and Mentoring. Giving back through fencing. Learn to fence." />
+    <meta name="keywords" content="fencing, youth, chicago, USA Fencing, charity, non-profit, giving back, community, learn to fence, Tate Nguyen, Ella Nguyen" />
     <meta name="author" content="Nguyen Nguyen" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta property="og:image" content="<?php echo get_template_directory_uri(); ?>/assets/img/YFC-thumb.png" />
@@ -34,8 +33,7 @@
     <meta property="og:url" content="https://youthfencingchicago.com" />
     <meta property="og:title" content="Youth Fencing Chicago" />
     <meta property="og:site_name" content="Youth Fencing Chicago" />
-    <meta property="og:description"
-        content="Youth Fencing Outreach and Mentoring in Chicago. Giving back through fencing. Learn to fence." />
+    <meta property="og:description" content="Youth Fencing Outreach and Mentoring in Chicago. Giving back through fencing. Learn to fence." />
 
     <!--favicon-->
     <!--<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/assets/favicon/yfc.ico" type="image/x-icon"/>-->
@@ -72,30 +70,58 @@
     /assets/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <!--<link rel="shortcut icon" href="yfc.ico" type="image/x-icon" />-->
-    <link rel="mask-icon" href="<?php echo get_template_directory_uri(); ?>/assets/favicon/safari-pinned-tab.svg"
-        color="#000000">
+    <link rel="mask-icon" href="<?php echo get_template_directory_uri(); ?>/assets/favicon/safari-pinned-tab.svg" color="#000000">
     <!--Stylesheet-->
     <?php wp_head(); ?>
 </head>
 
 <body>
-    <button type="button" class="btn btn-danger btn-lg" id="btn-top">
-        <i class="bi bi-arrow-up"></i>
-    </button>
-    <section id="hero" class="your-hero">
-        <div class="your-herodd"></div>
-        <header>
-            <div class="dropdown primary-menu">
-                <button type="button" class="btn btn-primary nav-toggle" data-bs-toggle="dropdown" id="menu-drop">
-                    Menu<span></span>
-                </button>
-                <?php
-                wp_nav_menu(
-                    array(
-                        'theme_location' => 'primary',
-                        'menu_class' => 'dropdown-menu',
-                    )
-                );
-                ?>
-            </div>
-        </header>
+    <?php
+    if (is_front_page()) {
+    ?>
+        <button type="button" class="btn btn-danger btn-lg" id="btn-top">
+            <i class="bi bi-arrow-up"></i>
+        </button>
+        <section id="hero" class="your-hero">
+            <div class="your-herodd"></div>
+            <header>
+                <div class="dropdown primary-menu">
+                    <button type="button" class="btn btn-primary nav-toggle" data-bs-toggle="dropdown" id="menu-drop">
+                        Menu<span></span>
+                    </button>
+                    <?php
+                    wp_nav_menu(
+                        array(
+                            'theme_location' => 'primary',
+                            'menu_class' => 'dropdown-menu',
+                        )
+                    );
+                    ?>
+                </div>
+            </header>
+        <?php
+    } else {
+        ?>
+            <!-- <button type="button" class="btn btn-danger btn-lg" id="btn-top">
+                <i class="bi bi-arrow-up"></i>
+            </button>
+            <section>
+                <div class="your-herodd"></div>
+                <header>
+                    <div class="dropdown primary-menu">
+                        <button type="button" class="btn btn-primary nav-toggle" data-bs-toggle="dropdown" id="menu-drop">
+                            Menu<span></span>
+                        </button>
+                        <?php
+                        // wp_nav_menu(
+                        //     array(
+                        //         'theme_location' => 'primary',
+                        //         'menu_class' => 'dropdown-menu',
+                        //     )
+                        // );
+                        ?>
+                    </div>
+                </header>
+            </section> -->
+        <?php
+    }
