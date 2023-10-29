@@ -136,13 +136,13 @@ get_header();
                     <tbody>
                         <tr>
                             <td colspan="3"><strong>Preliminary Round Robin</strong></td>
-                            <td rowspan="2"><input type="text" class="fm-custom-in"></td>
+                            <td rowspan="2">$<input placeholder="pledge per point" type="text" class="fm-custom-in fm-lumpsum"></td>
                             <td class="fm-align-c" colspan="2">Calculated once tournament completes</td>
                         </tr>
                         <tr>
                             <td class="fm-align" colspan="1">Pools</td>
                             <td class="fm-align-c">30</td>
-                            <td><input type="text" class="fm-custom-in"></td>
+                            <td>$<input type="text" placeholder="pledge per point" class="fm-custom-in"></td>
                             <td class="fm-align-c"></td>
                             <td class="fm-align-c">$0.00</td>
                         </tr>
@@ -152,7 +152,7 @@ get_header();
                         <tr>
                             <td class="fm-align" colspan="1">Table 256</td>
                             <td class="fm-align-c">15</td>
-                            <td><input type="text" class="fm-custom-in"></td>
+                            <td>$<input type="text" placeholder="pledge per point" class="fm-custom-in"></td>
                             <td class="fm-align-c fm-bottom-border-remove"></td>
                             <td class="fm-align-c"></td>
                             <td class="fm-align-c">$0.00</td>
@@ -160,7 +160,7 @@ get_header();
                         <tr>
                             <td class="fm-align" colspan="1">Table 128</td>
                             <td class="fm-align-c">15</td>
-                            <td><input type="text" class="fm-custom-in"></td>
+                            <td>$<input type="text" placeholder="pledge per point" class="fm-custom-in"></td>
                             <td class="fm-align-c fm-bottom-border-remove"></td>
                             <td class="fm-align-c"></td>
                             <td class="fm-align-c">$0.00</td>
@@ -168,7 +168,7 @@ get_header();
                         <tr>
                             <td class="fm-align" colspan="1">Table 64</td>
                             <td class="fm-align-c">15</td>
-                            <td><input type="text" class="fm-custom-in"></td>
+                            <td>$<input type="text" placeholder="pledge per point" class="fm-custom-in"></td>
                             <td class="fm-align-c fm-bottom-border-remove"></td>
                             <td class="fm-align-c"></td>
                             <td class="fm-align-c">$0.00</td>
@@ -176,7 +176,7 @@ get_header();
                         <tr>
                             <td class="fm-align" colspan="1">Table 32</td>
                             <td class="fm-align-c">15</td>
-                            <td><input type="text" class="fm-custom-in"></td>
+                            <td>$<input type="text" placeholder="pledge per point" class="fm-custom-in"></td>
                             <td class="fm-align-c fm-bottom-border-remove"></td>
                             <td class="fm-align-c"></td>
                             <td class="fm-align-c">$0.00</td>
@@ -184,7 +184,7 @@ get_header();
                         <tr>
                             <td class="fm-align" colspan="1">Table 16</td>
                             <td class="fm-align-c">15</td>
-                            <td><input type="text" class="fm-custom-in"></td>
+                            <td>$<input type="text" placeholder="pledge per point" class="fm-custom-in"></td>
                             <td class="fm-align-c fm-bottom-border-remove"></td>
                             <td class="fm-align-c"></td>
                             <td class="fm-align-c">$0.00</td>
@@ -192,7 +192,7 @@ get_header();
                         <tr>
                             <td class="fm-align" colspan="1">Table 8</td>
                             <td class="fm-align-c">15</td>
-                            <td><input type="text" class="fm-custom-in"></td>
+                            <td>$<input type="text" placeholder="pledge per point" class="fm-custom-in"></td>
                             <td class="fm-align-c fm-bottom-border-remove"></td>
                             <td class="fm-align-c"></td>
                             <td class="fm-align-c">$0.00</td>
@@ -200,7 +200,7 @@ get_header();
                         <tr>
                             <td class="fm-align" colspan="1">Semi-Final</td>
                             <td class="fm-align-c">15</td>
-                            <td><input type="text" class="fm-custom-in"></td>
+                            <td>$<input type="text" placeholder="pledge per point" class="fm-custom-in"></td>
                             <td class="fm-align-c fm-bottom-border-remove"></td>
                             <td class="fm-align-c"></td>
                             <td class="fm-align-c">$0.00</td>
@@ -208,7 +208,7 @@ get_header();
                         <tr>
                             <td class="fm-align" colspan="1">Final</td>
                             <td class="fm-align-c">15</td>
-                            <td><input type="text" class="fm-custom-in"></td>
+                            <td>$<input type="text" placeholder="pledge per point" class="fm-custom-in"></td>
                             <td class="fm-align-c fm-bottom-border-remove"></td>
                             <td class="fm-align-c"></td>
                             <td class="fm-align-c">$0.00</td>

@@ -155,8 +155,9 @@ Use it to make something cool, have fun, and share what you've learned with othe
 }
 
 .fm-custom-table tr,
-.fm-custom-table th {
-  border: 1px solid #000000 !important;
+.fm-custom-table th,
+.fm-custom-table td {
+  border: 1px solid #000000;
 }
 .fm-custom-width {
   width: 20%;
@@ -168,4 +169,13 @@ Use it to make something cool, have fun, and share what you've learned with othe
 .fm-bottom-border-remove {
   border-bottom-color: #cccccc !important;
   border-right-color: #000000 !important;
+}
+.fm-custom-in {
+  width: 90%;
+  outline: 0;
+  border: 0;
+}
+
+.fm-lumpsum {
+  margin-top: 2em;
 }
