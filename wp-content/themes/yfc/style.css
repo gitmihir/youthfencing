@@ -122,6 +122,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
 .section-main {
   margin-left: 10rem;
   margin-right: 10rem;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
 }
 .fm-content-i {
   text-align: center;
@@ -178,4 +180,46 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 .fm-lumpsum {
   margin-top: 2em;
+}
+.fm-main-div {
+  width: 100%;
+  float: left;
+  display: inline-flex;
+  border-bottom: 1px solid #000000;
+  font-size: 13px;
+}
+.fm-child-div1 {
+  width: 35%;
+  float: left;
+}
+.fm-child-div2 {
+  width: 50%;
+  float: right;
+}
+/* .fm-width {
+  width: 7rem;
+} */
+.fm-p {
+  font-size: 11px;
+  color: #000000;
+  width: 8rem;
+  font-weight: 600;
+}
+.fm-fnt {
+  font-size: 13px;
+}
+.fm-border-r {
+  border-right: 1px solid #000000;
+  padding-right: 10px;
+}
+.fm-border-rm {
+  border-right: 2px solid #000000;
+  padding: 0 18px 0 18px;
+  border-right: 2px solid #000000;
+}
+.fm-custom-p {
+  padding-left: 10px;
+}
+.fm-cstw {
+  width: 5rem;
 }

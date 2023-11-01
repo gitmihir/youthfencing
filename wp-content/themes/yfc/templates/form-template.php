@@ -1,6 +1,6 @@
 <?php
 /*
- * Template Name: Youth Fencing Form
+ * Template Name: Pledge Form
  */
 get_header();
 ?>
@@ -72,7 +72,7 @@ get_header();
                 <div class="col-md-6">
                     <table class="table mt-4 fm-table">
                         <tr>
-                            <th class="fm-align">Fencer's Name :</th>
+                            <th class="fm-align">Fencer's Name : (DropDown)</th>
                             <td>&nbspTate Nguyen</td>
                         </tr>
                         <tr>
@@ -111,122 +111,221 @@ get_header();
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-12">
-                <div class="fm-custom-text">
-                    <p>
-                        ** Just like Walk-A-Thon is based on $ per mile walked. This will be $ per points earned
-                        <br>
-                        ** Only need to complete the <span class="fm-red">RED</span> columns
-                    </p>
+                <div class="col-md-12">
+                    <div class="fm-custom-text">
+                        <p>
+                            ** Just like Walk-A-Thon is based on $ per mile walked. This will be $ per points earned
+                            <br>
+                            ** Only need to complete the <span class="fm-red">RED</span> columns
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <table class="table fm-custom-table">
+                        <thead class="fm-table-head">
+                            <tr>
+                                <th class="fm-custom-width"></th>
+                                <th class="fm-align-c">Max Possible Points</th>
+                                <td class="fm-red"><strong>Pledge Amount</strong> </br> $ per Point</td>
+                                <th class="fm-red">( or ) Lump Sum Donation</th>
+                                <th class="fm-align-c">Fencer's Points</th>
+                                <th class="fm-align-c">Total Donation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="3"><strong>Preliminary Round Robin</strong></td>
+                                <td rowspan="2">$<input placeholder="lump sum pledge" type="text" class="fm-custom-in fm-lumpsum"></td>
+                                <td class="fm-align-c" colspan="2">Calculated once tournament completes</td>
+                            </tr>
+                            <tr>
+                                <td class="fm-align" colspan="1">Pools</td>
+                                <td class="fm-align-c">30</td>
+                                <td>$<input type="text" placeholder="pledge per point" class="fm-custom-in"></td>
+                                <td class="fm-align-c"></td>
+                                <td class="fm-align-c">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3"><strong>Direct Elimination Rounds</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="fm-align" colspan="1">Table 256</td>
+                                <td class="fm-align-c">15</td>
+                                <td>$<input type="text" placeholder="pledge per point" class="fm-custom-in"></td>
+                                <td class="fm-align-c fm-bottom-border-remove"></td>
+                                <td class="fm-align-c"></td>
+                                <td class="fm-align-c">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="fm-align" colspan="1">Table 128</td>
+                                <td class="fm-align-c">15</td>
+                                <td>$<input type="text" placeholder="pledge per point" class="fm-custom-in"></td>
+                                <td class="fm-align-c fm-bottom-border-remove"></td>
+                                <td class="fm-align-c"></td>
+                                <td class="fm-align-c">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="fm-align" colspan="1">Table 64</td>
+                                <td class="fm-align-c">15</td>
+                                <td>$<input type="text" placeholder="pledge per point" class="fm-custom-in"></td>
+                                <td class="fm-align-c fm-bottom-border-remove"></td>
+                                <td class="fm-align-c"></td>
+                                <td class="fm-align-c">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="fm-align" colspan="1">Table 32</td>
+                                <td class="fm-align-c">15</td>
+                                <td>$<input type="text" placeholder="pledge per point" class="fm-custom-in"></td>
+                                <td class="fm-align-c fm-bottom-border-remove"></td>
+                                <td class="fm-align-c"></td>
+                                <td class="fm-align-c">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="fm-align" colspan="1">Table 16</td>
+                                <td class="fm-align-c">15</td>
+                                <td>$<input type="text" placeholder="pledge per point" class="fm-custom-in"></td>
+                                <td class="fm-align-c fm-bottom-border-remove"></td>
+                                <td class="fm-align-c"></td>
+                                <td class="fm-align-c">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="fm-align" colspan="1">Table 8</td>
+                                <td class="fm-align-c">15</td>
+                                <td>$<input type="text" placeholder="pledge per point" class="fm-custom-in"></td>
+                                <td class="fm-align-c fm-bottom-border-remove"></td>
+                                <td class="fm-align-c"></td>
+                                <td class="fm-align-c">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="fm-align" colspan="1">Semi-Final</td>
+                                <td class="fm-align-c">15</td>
+                                <td>$<input type="text" placeholder="pledge per point" class="fm-custom-in"></td>
+                                <td class="fm-align-c fm-bottom-border-remove"></td>
+                                <td class="fm-align-c"></td>
+                                <td class="fm-align-c">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td class="fm-align" colspan="1">Final</td>
+                                <td class="fm-align-c">15</td>
+                                <td>$<input type="text" placeholder="pledge per point" class="fm-custom-in"></td>
+                                <td class="fm-align-c fm-bottom-border-remove"></td>
+                                <td class="fm-align-c"></td>
+                                <td class="fm-align-c">$0.00</td>
+                            </tr>
+                            <tr class="fm-last-tr">
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="fm-align-c">Total</td>
+                                <td class="fm-align-c">$0.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-12">
+                    <div class="fm-custom-text">
+                        <p>
+                            * Please make check(s) payable to: <strong>Youth Fencing Chicago</strong>
+                            <br>
+                            * For Digtial Payment, please ask for contact information
+                            <br>
+                            * Remember to check with your company about matching donations.
+                            <br>
+                            * A FencingTimeLive link can be sent to follow the progress of the tournament upon request
+                        </p>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-12">
-                <table class="table fm-custom-table">
-                    <thead class="fm-table-head">
-                        <tr>
-                            <th class="fm-custom-width"></th>
-                            <th class="fm-align-c">Max Possible Points</th>
-                            <td class="fm-red"><strong>Pledge Amount</strong> </br> $ per Point</td>
-                            <th class="fm-red">( or ) Lump Sum Donation</th>
-                            <th class="fm-align-c">Fencer's Points</th>
-                            <th class="fm-align-c">Total Donation</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td colspan="3"><strong>Preliminary Round Robin</strong></td>
-                            <td rowspan="2">$<input placeholder="pledge per point" type="text" class="fm-custom-in fm-lumpsum"></td>
-                            <td class="fm-align-c" colspan="2">Calculated once tournament completes</td>
-                        </tr>
-                        <tr>
-                            <td class="fm-align" colspan="1">Pools</td>
-                            <td class="fm-align-c">30</td>
-                            <td>$<input type="text" placeholder="pledge per point" class="fm-custom-in"></td>
-                            <td class="fm-align-c"></td>
-                            <td class="fm-align-c">$0.00</td>
-                        </tr>
-                        <tr>
-                            <td colspan="3"><strong>Direct Elimination Rounds</strong></td>
-                        </tr>
-                        <tr>
-                            <td class="fm-align" colspan="1">Table 256</td>
-                            <td class="fm-align-c">15</td>
-                            <td>$<input type="text" placeholder="pledge per point" class="fm-custom-in"></td>
-                            <td class="fm-align-c fm-bottom-border-remove"></td>
-                            <td class="fm-align-c"></td>
-                            <td class="fm-align-c">$0.00</td>
-                        </tr>
-                        <tr>
-                            <td class="fm-align" colspan="1">Table 128</td>
-                            <td class="fm-align-c">15</td>
-                            <td>$<input type="text" placeholder="pledge per point" class="fm-custom-in"></td>
-                            <td class="fm-align-c fm-bottom-border-remove"></td>
-                            <td class="fm-align-c"></td>
-                            <td class="fm-align-c">$0.00</td>
-                        </tr>
-                        <tr>
-                            <td class="fm-align" colspan="1">Table 64</td>
-                            <td class="fm-align-c">15</td>
-                            <td>$<input type="text" placeholder="pledge per point" class="fm-custom-in"></td>
-                            <td class="fm-align-c fm-bottom-border-remove"></td>
-                            <td class="fm-align-c"></td>
-                            <td class="fm-align-c">$0.00</td>
-                        </tr>
-                        <tr>
-                            <td class="fm-align" colspan="1">Table 32</td>
-                            <td class="fm-align-c">15</td>
-                            <td>$<input type="text" placeholder="pledge per point" class="fm-custom-in"></td>
-                            <td class="fm-align-c fm-bottom-border-remove"></td>
-                            <td class="fm-align-c"></td>
-                            <td class="fm-align-c">$0.00</td>
-                        </tr>
-                        <tr>
-                            <td class="fm-align" colspan="1">Table 16</td>
-                            <td class="fm-align-c">15</td>
-                            <td>$<input type="text" placeholder="pledge per point" class="fm-custom-in"></td>
-                            <td class="fm-align-c fm-bottom-border-remove"></td>
-                            <td class="fm-align-c"></td>
-                            <td class="fm-align-c">$0.00</td>
-                        </tr>
-                        <tr>
-                            <td class="fm-align" colspan="1">Table 8</td>
-                            <td class="fm-align-c">15</td>
-                            <td>$<input type="text" placeholder="pledge per point" class="fm-custom-in"></td>
-                            <td class="fm-align-c fm-bottom-border-remove"></td>
-                            <td class="fm-align-c"></td>
-                            <td class="fm-align-c">$0.00</td>
-                        </tr>
-                        <tr>
-                            <td class="fm-align" colspan="1">Semi-Final</td>
-                            <td class="fm-align-c">15</td>
-                            <td>$<input type="text" placeholder="pledge per point" class="fm-custom-in"></td>
-                            <td class="fm-align-c fm-bottom-border-remove"></td>
-                            <td class="fm-align-c"></td>
-                            <td class="fm-align-c">$0.00</td>
-                        </tr>
-                        <tr>
-                            <td class="fm-align" colspan="1">Final</td>
-                            <td class="fm-align-c">15</td>
-                            <td>$<input type="text" placeholder="pledge per point" class="fm-custom-in"></td>
-                            <td class="fm-align-c fm-bottom-border-remove"></td>
-                            <td class="fm-align-c"></td>
-                            <td class="fm-align-c">$0.00</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="col-md-12">
-                <div class="fm-custom-text">
-                    <p>
-                        * Please make check(s) payable to: <strong>Youth Fencing Chicago</strong>
-                        <br>
-                        * For Digtial Payment, please ask for contact information
-                        <br>
-                        * Remember to check with your company about matching donations.
-                        <br>
-                        * A FencingTimeLive link can be sent to follow the progress of the tournament upon request
-                    </p>
+
+        </section>
+        <section class="section-four">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="fm-main-div">
+                        <div class="fm-child-div1">
+                            <div><strong>Last Tournament Stats</strong></div>
+                        </div>
+                        <div class="fm-child-div2">
+                            <div>March NAC and Parafencing</div>
+                            <div>National Championships</div>
+                        </div>
+                    </div>
+
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="fm-width fm-fnt fm-cstw"><strong>Cadet</strong> <i>(points)</i></td>
+                                <td class="fm-align fm-width fm-fnt fm-border-r">Pools</td>
+                                <td class="fm-table-head fm-fnt fm-border-rm">28</td>
+                                <td class="fm-table-head fm-fnt fm-custom-p">fencers in event</td>
+                                <td class="fm-table-head fm-fnt fm-custom-p">Final Rank</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td class="fm-align fm-width fm-fnt fm-border-r">Table 256</td>
+                                <td class="fm-table-head fm-fnt fm-border-rm">BYE</td>
+                                <th class="fm-table-head fm-fnt">229</th>
+                                <th class="fm-table-head fm-fnt">43</th>
+
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td class="fm-align fm-width fm-fnt fm-border-r">Table 128</td>
+                                <td class="fm-table-head fm-fnt fm-border-rm">15</td>
+                                <td colspan="2" rowspan="4" class="fm-custom-p">
+                                    <p class="fm-p">*BYE : fencer did well in
+                                        the "Round Robin" Pools
+                                        event, and automatically
+                                        advances to the next
+                                        elimination table</p>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td class="fm-align fm-width fm-fnt fm-border-r">Table 64</td>
+                                <td class="fm-table-head fm-fnt fm-border-rm">12</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td class="fm-align fm-width fm-fnt fm-border-r">Table 32</td>
+                                <td class="fm-table-head fm-fnt fm-border-rm">-</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td class="fm-align fm-width fm-fnt fm-border-r">Table 16</td>
+                                <td class="fm-table-head fm-fnt fm-border-rm">-</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td class="fm-align fm-width fm-fnt fm-border-r">Table 8</td>
+                                <td class="fm-table-head fm-fnt fm-border-rm">-</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td class="fm-align fm-width fm-fnt fm-border-r">Semi-Final</td>
+                                <td class="fm-table-head fm-fnt fm-border-rm">-</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td class="fm-align fm-width fm-fnt fm-border-r">Final</td>
+                                <td class="fm-table-head fm-fnt fm-border-rm">-</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </section>
