@@ -327,6 +327,57 @@ get_header();
                         </tbody>
                     </table>
                 </div>
+                <div class="col-md-6">
+                    <div class="fm-main-div fm-top-m">
+                        <div class="fm-child-div1">
+                            <div><strong>Fencing Record</strong></div>
+                        </div>
+                        <div class="fm-child-div3">
+                            <div><strong>Weapon:</strong> Epee</div>
+                        </div>
+                    </div>
+                    <table class="fm-right-table">
+                        <tbody>
+                            <tr>
+                                <td><strong>Rating</strong></td>
+                                <td><strong>C23</strong></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><strong></strong></td>
+                                <td>Age Group</td>
+                                <td>Rank</td>
+                                <td>As of Date</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Regional</strong></td>
+                                <td>Cadet</td>
+                                <td>14</td>
+                                <td>3/5/23</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>Junior</td>
+                                <td>48</td>
+                                <td>3/5/23</td>
+                            </tr>
+                            <tr>
+                                <td><strong>National</strong></td>
+                                <td>Cadet</td>
+                                <td>-</td>
+                                <td>3/5/23</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>Junior</td>
+                                <td>-</td>
+                                <td>3/5/23</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
             </div>
         </section>
     </div>

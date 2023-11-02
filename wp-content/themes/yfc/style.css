@@ -223,3 +223,15 @@ Use it to make something cool, have fun, and share what you've learned with othe
 .fm-cstw {
   width: 5rem;
 }
+.fm-top-m {
+  margin-top: 14pt;
+}
+.fm-right-table tr td {
+  width: 9rem;
+  font-size: 13px;
+}
+.fm-child-div3 {
+  width: 65%;
+  float: right;
+  text-align: right;
+}
