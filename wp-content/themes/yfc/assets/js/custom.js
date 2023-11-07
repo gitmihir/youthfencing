@@ -103,24 +103,24 @@ $("#send-button").click(function () {
   });
 });
 
-window.addEventListener("load", function () {
-  let btnTop = document.getElementById("btn-top");
-  // display the button when user scrolls more than 20px
-  window.onscroll = function () {
-    if (
-      document.body.scrollTop > 20 ||
-      document.documentElement.scrollTop > 20
-    ) {
-      btnTop.style.display = "block";
-    } else {
-      btnTop.style.display = "none";
-    }
-  };
-  btnTop.addEventListener("click", function () {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  });
-});
+// window.addEventListener("load", function () {
+//   let btnTop = document.getElementById("btn-top");
+//   // display the button when user scrolls more than 20px
+//   window.onscroll = function () {
+//     if (
+//       document.body.scrollTop > 20 ||
+//       document.documentElement.scrollTop > 20
+//     ) {
+//       btnTop.style.display = "block";
+//     } else {
+//       btnTop.style.display = "none";
+//     }
+//   };
+//   btnTop.addEventListener("click", function () {
+//     document.body.scrollTop = 0;
+//     document.documentElement.scrollTop = 0;
+//   });
+// });
 $(document).ready(function () {
   $(".text-field").hide();
   $("#signup-form").submit(function (e) {
@@ -218,4 +218,109 @@ $(document).ready(function () {
     });
   }
   e(), s();
+});
+$(".btnvalidate").attr("disabled", "disabled");
+$(".errormsgpassword").hide();
+$(".repeatmsgpassword").hide();
+function validatePassword(newPassword) {
+  // var regularExpression = /^[a-zA-Z]$/;
+  if (
+    !newPassword.value.match(
+      /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/
+    )
+  ) {
+    $(".errormsgpassword").show();
+    $(".errormsgpassword").html("Weak Password, please make strong password!");
+    $(".btnvalidate").attr("disabled", "disabled");
+  } else {
+    $(".btnvalidate").removeAttr("disabled");
+    $(".errormsgpassword").hide();
+  }
+}
+var myFunction = function () {
+  let currentpass = $(".currentpass").val();
+  let repeatpassword = $(this).val();
+  if (repeatpassword === currentpass) {
+    $(".repeatmsgpassword ").html("Password matched");
+    $(".repeatmsgpassword").hide();
+    $(".btnvalidate").removeAttr("disabled");
+  } else {
+    $(".repeatmsgpassword").html("Password does not match");
+    $(".repeatmsgpassword").show();
+    $(".btnvalidate").attr("disabled", "disabled");
+  }
+};
+
+$(".repeatpassword")
+  .keyup(myFunction)
+  .keypress(myFunction)
+  .blur(myFunction)
+  .change(myFunction);
+jQuery(".openpasswordoprion").mouseover(function () {
+  jQuery(this).dialog("open");
+});
+
+function validateURL(urlval) {
+  if (
+    !urlval.value.match(
+      /^((ftp|http|https):\/\/)?(www.)?(?!.*(ftp|http|https|www.))[a-zA-Z0-9_-]+(\.[a-zA-Z]+)+((\/)[\w#]+)*(\/\w+\?[a-zA-Z0-9_]+=\w+(&[a-zA-Z0-9_]+=\w+)*)?\/?$/gm
+    )
+  ) {
+    $(".errorclass_" + urlval.name).remove();
+    $("input[name=" + urlval.name + "]").after(
+      '<div class="errorclass_' +
+        urlval.name +
+        '">Please enter a valid URL</div>'
+    );
+    $("input[name=" + urlval.name + "]").addClass("errorborderclass");
+    urlval.value = "";
+    $(".btnvalidate").attr("disabled", "disabled");
+  } else {
+    $("input[name=" + urlval.name + "]").removeClass("errorborderclass");
+    $(".errorclass_" + urlval.name).remove();
+    $(".btnvalidate").removeAttr("disabled");
+  }
+}
+
+$(".getfencerdata").on("change", function () {
+  $(".fmschoolname").html("");
+  $(".fmgrade").html("");
+  $(".fmwp1").html("");
+  $(".fmwp2").html("");
+  $(".fmwp3").html("");
+  $(".fmrt1").html("");
+  $(".fmrt2").html("");
+  $(".fmrt3").html("");
+  $(".fmurl a").html("");
+  $(".fmemail a").html("");
+
+  let getuserid = $(this).find("option:selected").val();
+  let ajaxurlwp = $(".ajaxurlwp").val();
+
+  $.ajax({
+    type: "POST",
+    url: ajaxurlwp,
+    data: {
+      action: "getUserMetaData",
+      getuserid: getuserid,
+    },
+    success: function (response) {
+      if (response) {
+        let splits = response.split("~");
+        console.log(splits);
+        $(".fmschoolname").html("&nbsp" + splits[0]);
+        $(".fmgrade").html("&nbsp" + splits[1]);
+        $(".fmwp1").html("&nbsp" + splits[2]);
+        $(".fmwp2").html("&nbsp" + splits[5]);
+        $(".fmwp3").html("&nbsp" + splits[8]);
+        $(".fmrt1").html("&nbsp" + splits[4]);
+        $(".fmrt2").html("&nbsp" + splits[7]);
+        $(".fmrt3").html("&nbsp" + splits[10]);
+        $(".fmurl a").attr("href", splits[11]);
+        $(".fmurl a").html("&nbsp" + splits[11]);
+        $(".fmemail a").attr("href", "mailto:" + splits[12]);
+        $(".fmemail a").html("&nbsp" + splits[12]);
+      }
+    },
+  });
 });

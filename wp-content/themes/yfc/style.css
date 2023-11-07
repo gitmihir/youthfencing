@@ -235,3 +235,91 @@ Use it to make something cool, have fun, and share what you've learned with othe
   float: right;
   text-align: right;
 }
+.registration {
+  font-size: 15px;
+}
+.form-label {
+  font-size: 15px;
+  font-weight: 500;
+  color: #000000;
+}
+@media (min-width: 1025px) {
+  .h-custom {
+    height: 100vh !important;
+  }
+}
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+  font-size: 1rem;
+  line-height: 2.15;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+}
+.card-registration .select-arrow {
+  top: 13px;
+}
+
+.gradient-custom-2 {
+  /* fallback for old browsers */
+  background: #a1c4fd;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(
+    to right,
+    rgba(161, 196, 253, 1),
+    rgba(194, 233, 251, 1)
+  );
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(
+    to right,
+    rgba(161, 196, 253, 1),
+    rgba(194, 233, 251, 1)
+  );
+}
+
+.bg-indigo {
+  background-color: #8ba8ad;
+}
+@media (min-width: 992px) {
+  .card-registration-2 .bg-indigo {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+}
+@media (max-width: 991px) {
+  .card-registration-2 .bg-indigo {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+}
+.errormsgpassword,
+.repeatmsgpassword,
+div[class*="errorclass_"] {
+  color: #ff0000;
+  font-size: 11px;
+  font-weight: 500;
+}
+.errormsgpassword,
+.repeatmsgpassword {
+  display: none;
+}
+.reqcl {
+  color: #ff0000;
+}
+div[class*="errorclass_"] {
+  color: #ff0000;
+}
+.field-icon {
+  float: right;
+  margin-left: -25px;
+  margin-top: -25px;
+  position: relative;
+  z-index: 2;
+}
+.rg-cards img {
+  transform: scaleX(-1);
+  width: 100%;
+}
+.fmcwidth {
+  width: 22%;
+}

@@ -655,3 +655,168 @@ function standard_theme_style_scripts()
 }
 
 add_action('wp_enqueue_scripts', 'standard_theme_style_scripts');
+
+
+function my_theme_create_new_user()
+{
+	if (
+		!isset($_POST['djie3duhb3edub3u'])
+		|| !wp_verify_nonce($_POST['djie3duhb3edub3u'], 'create_user_form_submit')
+	) {
+	} else {
+		$username = sanitize_text_field($_POST['fencername']);
+		$email = sanitize_text_field($_POST['femail']);
+		$user_id = username_exists($username);
+		if (!$user_id && email_exists($email) === false) {
+			$userid = wp_insert_user(
+				array(
+					'user_login' =>	$email,
+					'first_name' => $username,
+					'user_email' =>	$email,
+				)
+			);
+			wp_set_password($_POST['upassword'], $userid);
+			if (isset($_POST['fschool'])) {
+				add_user_meta($userid, 'YFReg_school', $_POST['fschool'], true);
+			}
+			if (isset($_POST['fgrade'])) {
+				add_user_meta($userid, 'YFReg_Grade', $_POST['fgrade'], true);
+			}
+			if (isset($_POST['weaponone'])) {
+				add_user_meta($userid, 'weaponone', $_POST['weaponone'], true);
+			}
+			if (isset($_POST['ratingone'])) {
+				add_user_meta($userid, 'ratingone', $_POST['ratingone'], true);
+			}
+			if (isset($_POST['ratingyearone'])) {
+				add_user_meta($userid, 'ratingyearone', $_POST['ratingyearone'], true);
+			}
+			if (isset($_POST['weapontwo'])) {
+				add_user_meta($userid, 'weapontwo', $_POST['weapontwo'], true);
+			}
+			if (isset($_POST['ratingtwo'])) {
+				add_user_meta($userid, 'ratingtwo', $_POST['ratingtwo'], true);
+			}
+			if (isset($_POST['ratingyeartwo'])) {
+				add_user_meta($userid, 'ratingyeartwo', $_POST['ratingyeartwo'], true);
+			}
+			if (isset($_POST['weaponthree'])) {
+				add_user_meta($userid, 'weaponthree', $_POST['weaponthree'], true);
+			}
+			if (isset($_POST['ratingthree'])) {
+				add_user_meta($userid, 'ratingthree', $_POST['ratingthree'], true);
+			}
+			if (isset($_POST['ratingyearthree'])) {
+				add_user_meta($userid, 'ratingyearthree', $_POST['ratingyearthree'], true);
+			}
+			if (isset($_POST['ftrackingurl'])) {
+				add_user_meta($userid, 'ftrackingurl', $_POST['ftrackingurl'], true);
+			}
+		} else {
+			return false; //username exists already
+		}
+	}
+}
+add_action('init', 'my_theme_create_new_user');
+
+function mysite_custom_define()
+{
+	$custom_meta_fields = array();
+	$custom_meta_fields['YFReg_school'] = 'School';
+	$custom_meta_fields['YFReg_Grade'] = 'Grade';
+	$custom_meta_fields['weaponone'] = 'Weapon One';
+	$custom_meta_fields['ratingone'] = 'Rating One';
+	$custom_meta_fields['ratingyearone'] = 'Rating Year One';
+	$custom_meta_fields['weapontwo'] = 'Weapon Two';
+	$custom_meta_fields['ratingtwo'] = 'Rating Two';
+	$custom_meta_fields['ratingyeartwo'] = 'Rating Year Two';
+	$custom_meta_fields['weaponthree'] = 'Weapon Three';
+	$custom_meta_fields['ratingthree'] = 'Rating Three';
+	$custom_meta_fields['ratingyearthree'] = 'Rating Year Three';
+	$custom_meta_fields['ftrackingurl'] = 'Fencing Tracker URL';
+
+	return $custom_meta_fields;
+}
+function mysite_columns($defaults)
+{
+	$meta_number = 0;
+	$custom_meta_fields = mysite_custom_define();
+	foreach ($custom_meta_fields as $meta_field_name => $meta_disp_name) {
+		$meta_number++;
+		$defaults[('mysite-usercolumn-' . $meta_number . '')] = __($meta_disp_name, 'user-column');
+	}
+	return $defaults;
+}
+
+function mysite_custom_columns($value, $column_name, $id)
+{
+	$meta_number = 0;
+	$custom_meta_fields = mysite_custom_define();
+	foreach ($custom_meta_fields as $meta_field_name => $meta_disp_name) {
+		$meta_number++;
+		if ($column_name == ('mysite-usercolumn-' . $meta_number . '')) {
+			return get_the_author_meta($meta_field_name, $id);
+		}
+	}
+}
+function mysite_show_extra_profile_fields($user)
+{
+	print('<h3>Extra profile information</h3>');
+
+	print('<table class="form-table">');
+
+	$meta_number = 0;
+	$custom_meta_fields = mysite_custom_define();
+	foreach ($custom_meta_fields as $meta_field_name => $meta_disp_name) {
+		$meta_number++;
+		print('<tr>');
+		print('<th><label for="' . $meta_field_name . '">' . $meta_disp_name . '</label></th>');
+		print('<td>');
+		print('<input type="text" name="' . $meta_field_name . '" id="' . $meta_field_name . '" value="' . esc_attr(get_the_author_meta($meta_field_name, $user->ID)) . '" class="regular-text" /><br />');
+		print('<span class="description"></span>');
+		print('</td>');
+		print('</tr>');
+	}
+	print('</table>');
+}
+function mysite_save_extra_profile_fields($user_id)
+{
+
+	if (!current_user_can('edit_user', $user_id))
+		return false;
+
+	$meta_number = 0;
+	$custom_meta_fields = mysite_custom_define();
+	foreach ($custom_meta_fields as $meta_field_name => $meta_disp_name) {
+		$meta_number++;
+		update_user_meta($user_id, $meta_field_name, $_POST[$meta_field_name]);
+	}
+}
+add_action('show_user_profile', 'mysite_show_extra_profile_fields');
+add_action('edit_user_profile', 'mysite_show_extra_profile_fields');
+add_action('personal_options_update', 'mysite_save_extra_profile_fields');
+add_action('edit_user_profile_update', 'mysite_save_extra_profile_fields');
+add_action('manage_users_custom_column', 'mysite_custom_columns', 15, 3);
+//add_filter('manage_users_columns', 'mysite_columns', 15, 1);
+
+
+function getUserMetaData()
+{
+	$getuserid = $_POST['getuserid'];
+	$user = get_user_by('ID', $getuserid);
+	$useremail = $user->user_email;
+	echo get_user_meta($getuserid, 'YFReg_school', true) . "~" . get_user_meta($getuserid, 'YFReg_Grade', true) . "~" . get_user_meta($getuserid, 'weaponone', true) . "~" . get_user_meta($getuserid, 'ratingone', true) . "~" . get_user_meta($getuserid, 'ratingyearone', true) . "~" . get_user_meta($getuserid, 'weapontwo', true) . "~" . get_user_meta($getuserid, 'ratingtwo', true) . "~" . get_user_meta($getuserid, 'ratingyeartwo', true) . "~" . get_user_meta($getuserid, 'weaponthree', true) . "~" . get_user_meta($getuserid, 'ratingthree', true) . "~" . get_user_meta($getuserid, 'ratingyearthree', true) . "~" . get_user_meta($getuserid, 'ftrackingurl', true) . "~" . $useremail;
+	die();
+}
+add_action('wp_ajax_getUserMetaData', 'getUserMetaData');
+add_action('wp_ajax_nopriv_getUserMetaData', 'getUserMetaData');
+
+function custom_login_redirect($redirect_to, $request, $user)
+{
+	$user_role = $user->roles[0];
+	if ($user_role == 'subscriber') {
+		$redirect_to = get_site_url() . '/pledge-form/';
+	}
+	return $redirect_to;
+}
+add_filter('login_redirect', 'custom_login_redirect', 10, 3);
