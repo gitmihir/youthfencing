@@ -108,7 +108,7 @@
         ?>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container">
-                    <a class="navbar-brand" href="<?php echo get_site_url(); ?>">Youth Fencing Chicago</a>
+                    <a class="navbar-brand" href="<?php echo get_site_url(); ?>"><strong>Youth Fencing</strong> Chicago</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">

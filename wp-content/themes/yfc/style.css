@@ -309,7 +309,7 @@ div[class*="errorclass_"] {
   width: 22%;
 }
 .slignbtn {
-  float: right;
+  float: right !important;
 }
 @media only screen and (max-width: 600px) {
   .section-main {
