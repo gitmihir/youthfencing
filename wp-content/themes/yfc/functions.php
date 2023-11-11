@@ -829,12 +829,7 @@ function my_theme_create_new_form_data()
 
 	} else {
 		if ('POST' == $_SERVER['REQUEST_METHOD'] && !empty($_POST['action']) && $_POST['action'] == "front_post")
-			// 	echo "<pre>";
-			// print_r($_POST);
-			// echo "</pre>";
-			$fm_Sponsor_name = $_POST['fm_Sponsor_name'];
-		$fm_Sponsor_email = $_POST['fm_Sponsor_email'];
-		$fm_Sponsor_phone = $_POST['fm_Sponsor_phone'];
+			$fm_Sponsor_phone = $_POST['fm_Sponsor_phone'];
 		$fmlumpsumamt = $_POST['fm-lump-sum-amt'];
 		$fmpledgeperpointamt1 = $_POST['fm-pledge-per-point-amt1'];
 		$fmpledgeperpointamt2 = $_POST['fm-pledge-per-point-amt2'];
@@ -848,12 +843,23 @@ function my_theme_create_new_form_data()
 		global $user_ID;
 		$post_type = 'pledge-form-data';
 
-		// $fencers_id = $_POST['fencers_name'];
+		$fencers_id = $_POST['fencers_name'];
+		$user_info = get_userdata($fencers_id);
+		$first_name = $user_info->first_name;
+		$user_email = $user_info->user_email;
 
-		// $user_info = get_userdata($fencers_id);
-
-		// $first_name = $user_info->first_name;
-		// get_user_meta();
+		$YFReg_school = get_user_meta($fencers_id, 'YFReg_school', true);
+		$YFReg_Grade = get_user_meta($fencers_id, 'YFReg_Grade', true);
+		$weaponone = get_user_meta($fencers_id, 'weaponone', true);
+		$ratingone = get_user_meta($fencers_id, 'ratingone', true);
+		$ratingyearone = get_user_meta($fencers_id, 'ratingyearone', true);
+		$weapontwo = get_user_meta($fencers_id, 'weapontwo', true);
+		$ratingtwo = get_user_meta($fencers_id, 'ratingtwo', true);
+		$ratingyeartwo = get_user_meta($fencers_id, 'ratingyeartwo', true);
+		$weaponthree = get_user_meta($fencers_id, 'weaponthree', true);
+		$ratingthree = get_user_meta($fencers_id, 'ratingthree', true);
+		$ratingyearthree = get_user_meta($fencers_id, 'ratingyearthree', true);
+		$ftrackingurl = get_user_meta($fencers_id, 'ftrackingurl', true);
 
 		$new_post = array(
 			'post_title' => $_POST['fm_Sponsor_name'],
@@ -863,45 +869,304 @@ function my_theme_create_new_form_data()
 		);
 		$postid = wp_insert_post($new_post);
 
+		add_post_meta($postid, '1_Fencer_First_Name', $first_name, true);
+		add_post_meta($postid, '2_Fencer_Email', $user_email, true);
+		add_post_meta($postid, '3_Fencer_School', $YFReg_school, true);
+		add_post_meta($postid, '4_Fencer_Grade', $YFReg_Grade, true);
+		add_post_meta($postid, '5_Fencer_Weapon_One', $weaponone, true);
+		add_post_meta($postid, '6_Fencer_Rating_One', $ratingone, true);
+		add_post_meta($postid, '7_Fencer_Rating_Year_One ', $ratingyearone, true);
+
+		add_post_meta($postid, '8_Fencer_Weapon_Two', $weapontwo, true);
+		add_post_meta($postid, '9_Fencer_Rating_Two', $ratingtwo, true);
+		add_post_meta($postid, '10_Fencer_Rating_Year_Two', $ratingyeartwo, true);
+
+		add_post_meta($postid, '11_Fencer_Weapon_Three', $weaponthree, true);
+		add_post_meta($postid, '12_Fencer_Rating_Three', $ratingthree, true);
+		add_post_meta($postid, '13_Fencer_Rating_Year_Three', $ratingyearthree, true);
+
+		add_post_meta($postid, '14_Fencer_Tracking_Url', $ftrackingurl, true);
+
 		if (isset($_POST['fm_Sponsor_email'])) {
-			add_post_meta($postid, 'Sponsor Email', $_POST['fm_Sponsor_email'], true);
+			add_post_meta($postid, '15_Sponsor_Email', $_POST['fm_Sponsor_email'], true);
 		}
-		if (isset($fm_Sponsor_phone)) {
-			add_post_meta($postid, 'Sponsor Phone', $fm_Sponsor_phone, true);
+		if (isset($_POST['fm_Sponsor_phone'])) {
+			add_post_meta($postid, '16_Sponsor_Phone', $_POST['fm_Sponsor_phone'], true);
 		}
 		if (isset($fmlumpsumamt)) {
-			add_post_meta($postid, 'Lump sum Amt', $fmlumpsumamt, true);
+			add_post_meta($postid, '17_Lump_sum_Amt', $fmlumpsumamt, true);
 		}
 		if (isset($fmpledgeperpointamt1)) {
-			add_post_meta($postid, 'Pledge per point amt 1', $fmpledgeperpointamt1, true);
+			add_post_meta($postid, '18_Pledge_per_point_amt_1', $fmpledgeperpointamt1, true);
 		}
 		if (isset($fmpledgeperpointamt2)) {
-			add_post_meta($postid, 'Pledge per point amt 2', $fmpledgeperpointamt2, true);
+			add_post_meta($postid, '19_Pledge_per_point_amt_2', $fmpledgeperpointamt2, true);
 		}
 		if (isset($fmpledgeperpointamt3)) {
-			add_post_meta($postid, 'Pledge per point amt 3', $fmpledgeperpointamt3, true);
+			add_post_meta($postid, '20_Pledge per point amt 3', $fmpledgeperpointamt3, true);
 		}
 		if (isset($fmpledgeperpointamt4)) {
-			add_post_meta($postid, 'Pledge per point amt 4', $fmpledgeperpointamt4, true);
+			add_post_meta($postid, '21_Pledge_per_point_amt_4', $fmpledgeperpointamt4, true);
 		}
 		if (isset($fmpledgeperpointamt5)) {
-			add_post_meta($postid, 'Pledge per point amt 5', $fmpledgeperpointamt5, true);
+			add_post_meta($postid, '22_Pledge_per_point_amt_5', $fmpledgeperpointamt5, true);
 		}
 		if (isset($fmpledgeperpointamt6)) {
-			add_post_meta($postid, 'Pledge per point amt 6', $fmpledgeperpointamt6, true);
+			add_post_meta($postid, '23_Pledge_per_point_amt_6', $fmpledgeperpointamt6, true);
 		}
 		if (isset($fmpledgeperpointamt7)) {
-			add_post_meta($postid, 'Pledge per point amt 7', $fmpledgeperpointamt7, true);
+			add_post_meta($postid, '24_Pledge_per_point_amt_7', $fmpledgeperpointamt7, true);
 		}
 		if (isset($fmpledgeperpointamt8)) {
-			add_post_meta($postid, 'Pledge per point amt 8', $fmpledgeperpointamt8, true);
+			add_post_meta($postid, '25_Pledge_per_point_amt_8', $fmpledgeperpointamt8, true);
 		}
 		if (isset($fmpledgeperpointamt9)) {
-			add_post_meta($postid, 'Pledge per point amt 9', $fmpledgeperpointamt9, true);
+			add_post_meta($postid, '26_Pledge_per_point_amt_9', $fmpledgeperpointamt9, true);
 		}
-
+		if (isset($_POST['fencers_name'])) {
+			add_post_meta($postid, '27_FencerId', $_POST['fencers_name'], true);
+		}
 		wp_redirect(get_permalink(128));
 		die;
+
 	}
 }
 add_action('init', 'my_theme_create_new_form_data');
+
+function register_custom_menu_page()
+{
+	global $wp_roles;
+	$wp_roles->add_cap('administrator', 'view_custom_menu');
+	$wp_roles->add_cap('subscriber', 'view_custom_menu');
+
+	add_menu_page('My Plugin Options', 'Pledge Data', 'view_custom_menu', 'documents', 'my_plugin_options', '', 11);
+}
+add_action('admin_menu', 'register_custom_menu_page');
+
+function my_plugin_options()
+{
+	$cuserid = get_current_user_id();
+
+	$args = array(
+		'post_type' => 'pledge-form-data',
+		'posts_per_page' => -1,
+		'meta_query' => array(
+			array(
+				'key' => '27_FencerId',
+				'value' => $cuserid,
+				'compare' => '=',
+			),
+		)
+	);
+	$query = new WP_Query($args);
+	?>
+	<div class="row">
+		<?php
+		$i = 1;
+		if ($query->have_posts()):
+			while ($query->have_posts()):
+				$query->the_post();
+				$postid = get_the_ID();
+				?>
+				<div class="col-md-12">
+					<h3>Sponsor Information
+						<?php echo $i; ?>
+					</h3>
+					<table class="customers">
+						<thead>
+							<tr>
+								<th>Sponsor Name</th>
+								<th>Sponsor Email</th>
+								<th>Sponsor Phone</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<?php echo get_the_title(); ?>
+								</td>
+								<td>
+									<?php echo get_post_meta($postid, '15_Sponsor_Email', true); ?>
+								</td>
+								<td>
+									<?php echo get_post_meta($postid, '16_Sponsor_Phone', true); ?>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="col-md-12">
+					<h3>Pledge Amount Information</h3>
+					<table class="customers">
+						<tr>
+							<td>Pools - Pledge Amount</td>
+							<td>
+								<?php
+								if (get_post_meta($postid, '18_Pledge_per_point_amt_1', true)) {
+									echo get_post_meta($postid, '18_Pledge_per_point_amt_1', true);
+								} else {
+									echo "-";
+								} ?>
+							</td>
+						</tr>
+						<tr>
+							<td>Table 256 - Pledge Amount</td>
+							<td>
+								<?php
+								if (get_post_meta($postid, '19_Pledge_per_point_amt_2', true)) {
+									echo get_post_meta($postid, '19_Pledge_per_point_amt_2', true);
+								} else {
+									echo "-";
+								}
+								?>
+							</td>
+						</tr>
+						<tr>
+							<td>Table 128 - Pledge Amount</td>
+							<td>
+								<?php
+								if (get_post_meta($postid, '20_Pledge_per_point_amt_3', true)) {
+									echo get_post_meta($postid, '20_Pledge_per_point_amt_3', true);
+								} else {
+									echo "-";
+								}
+								?>
+							</td>
+						</tr>
+						<tr>
+							<td>Table 64 - Pledge Amount</td>
+							<td>
+								<?php
+								if (get_post_meta($postid, '21_Pledge_per_point_amt_4', true)) {
+									echo get_post_meta($postid, '21_Pledge_per_point_amt_4', true);
+								} else {
+									echo "-";
+								}
+								?>
+							</td>
+						</tr>
+						<tr>
+							<td>Table 32 - Pledge Amount</td>
+							<td>
+								<?php
+								if (get_post_meta($postid, '22_Pledge_per_point_amt_5', true)) {
+									echo get_post_meta($postid, '22_Pledge_per_point_amt_5', true);
+								} else {
+									echo "-";
+								}
+								?>
+							</td>
+						</tr>
+						<tr>
+							<td>Table 16 - Pledge Amount</td>
+							<td>
+								<?php
+								if (get_post_meta($postid, '23_Pledge_per_point_amt_6', true)) {
+									echo get_post_meta($postid, '23_Pledge_per_point_amt_6', true);
+								} else {
+									echo "-";
+								}
+								?>
+							</td>
+						</tr>
+						<tr>
+							<td>Table 8 - Pledge Amount</td>
+							<td>
+								<?php
+								if (get_post_meta($postid, '24_Pledge_per_point_amt_7', true)) {
+									echo get_post_meta($postid, '24_Pledge_per_point_amt_7', true);
+								} else {
+									echo "-";
+								}
+								?>
+							</td>
+						</tr>
+						<tr>
+							<td>Semi-Final</td>
+							<td>
+								<?php
+								if (get_post_meta($postid, '25_Pledge_per_point_amt_8', true)) {
+									echo get_post_meta($postid, '25_Pledge_per_point_amt_8', true);
+								} else {
+									echo "-";
+								}
+								?>
+							</td>
+						</tr>
+						<tr>
+							<td>Final</td>
+							<td>
+								<?php
+								if (get_post_meta($postid, '26_Pledge_per_point_amt_9', true)) {
+									echo get_post_meta($postid, '26_Pledge_per_point_amt_9', true);
+								} else {
+									echo "-";
+								}
+								?>
+							</td>
+						</tr>
+						<tr>
+							<td>Lump Sum Donation</td>
+							<td>
+								<?php
+								if (get_post_meta($postid, '17_Lump_sum_Amt', true)) {
+									echo get_post_meta($postid, '17_Lump_sum_Amt', true);
+								} else {
+									echo "-";
+								}
+								?>
+							</td>
+						</tr>
+						<tr>
+							<td>Fencer Tracking Url</td>
+							<td>
+								<?php
+								if (get_post_meta($postid, '14_Fencer_Tracking_Url', true)) {
+									echo get_post_meta($postid, '14_Fencer_Tracking_Url', true);
+								} else {
+									echo "-";
+								}
+								?>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<hr>
+				<?php
+				$i++;
+			endwhile;
+		endif;
+		?>
+	</div>
+
+	<style>
+		.customers {
+			font-family: Arial, Helvetica, sans-serif;
+			border-collapse: collapse;
+			width: 50%;
+		}
+
+		.customers td,
+		.customers th {
+			border: 1px solid #ddd;
+			padding: 8px;
+		}
+
+		.customers tr:nth-child(even) {
+			background-color: #f2f2f2;
+		}
+
+		.customers tr:hover {
+			background-color: #ddd;
+		}
+
+		.customers th {
+			padding-top: 12px;
+			padding-bottom: 12px;
+			text-align: left;
+			background-color: #04AA6D;
+			color: white;
+		}
+	</style>
+	<?php
+}
