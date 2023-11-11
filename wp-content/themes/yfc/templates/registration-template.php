@@ -88,7 +88,7 @@ get_header();
                                                 <div class="form-outline">
                                                     <label class="form-label" for="weaponone">Weapon 1</label>
                                                     <select id="weaponone" name="weaponone"
-                                                        class="form-control form-control-md">
+                                                        class="form-select form-control-md">
                                                         <option value="">Select Weapon</option>
                                                         <option value="Epee">Epee</option>
                                                         <option value="Foil">Foil</option>
@@ -100,7 +100,7 @@ get_header();
                                                 <div class="form-outline">
                                                     <label class="form-label" for="ratingone">Rating</label>
                                                     <select id="ratingone" name="ratingone"
-                                                        class="form-control form-control-md">
+                                                        class="form-select form-control-md">
                                                         <option value="">Select Rating</option>
                                                         <option value="A">A</option>
                                                         <option value="B">B</option>
@@ -122,7 +122,7 @@ get_header();
                                                 <div class="form-outline">
                                                     <label class="form-label" for="weapontwo">Weapon 2</label>
                                                     <select id="weapontwo" name="weapontwo"
-                                                        class="form-control form-control-md">
+                                                        class="form-select form-control-md">
                                                         <option value="">Select Weapon</option>
                                                         <option value="Epee">Epee</option>
                                                         <option value="Foil">Foil</option>
@@ -134,7 +134,7 @@ get_header();
                                                 <div class="form-outline">
                                                     <label class="form-label" for="ratingtwo">Rating</label>
                                                     <select id="ratingtwo" name="ratingtwo"
-                                                        class="form-control form-control-md">
+                                                        class="form-select form-control-md">
                                                         <option value="">Select Rating</option>
                                                         <option value="A">A</option>
                                                         <option value="B">B</option>
@@ -156,7 +156,7 @@ get_header();
                                                 <div class="form-outline">
                                                     <label class="form-label" for="weaponthree">Weapon 3</label>
                                                     <select id="weaponthree" name="weaponthree"
-                                                        class="form-control form-control-md">
+                                                        class="form-select form-control-md">
                                                         <option value="">Select Weapon</option>
                                                         <option value="Epee">Epee</option>
                                                         <option value="Foil">Foil</option>
@@ -168,7 +168,7 @@ get_header();
                                                 <div class="form-outline">
                                                     <label class="form-label" for="ratingthree">Rating</label>
                                                     <select id="ratingthree" name="ratingthree"
-                                                        class="form-control form-control-md">
+                                                        class="form-select form-control-md">
                                                         <option value="">Select Rating</option>
                                                         <option value="A">A</option>
                                                         <option value="B">B</option>

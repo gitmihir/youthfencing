@@ -142,7 +142,7 @@ $fencerusers = get_users();
                                 <td>
                                     <input type="hidden" class="ajaxurlwp"
                                         value="<?php echo admin_url('admin-ajax.php'); ?>">
-                                    <select class="form-control getfencerdata fenceruserid" name="fencers_name">
+                                    <select class="form-select getfencerdata fenceruserid" name="fencers_name">
                                         <option value="">Select Fencer</option>
                                         <?php
                                         foreach ($fencerusers as $user) {
