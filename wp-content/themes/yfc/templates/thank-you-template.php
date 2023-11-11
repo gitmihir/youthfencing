@@ -7,7 +7,7 @@ get_header();
 <div class="container">
     <div class="row">
         <div class="col-md-3"></div>
-        <div class="col-md-6 mt-5">
+        <div class="col-md-6 mt-5 ">
             <div class="jumbotron text-xs-center">
                 <h1 class="display-3">Thank You!</h1>
                 <p class="lead">A copy of this will be sent to them, And that final pledge will be sent once tournament
