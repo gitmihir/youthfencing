@@ -221,11 +221,12 @@ $fencerusers = get_users();
                             <div class="form-group">
                                 <table class="table mt-4 fm-table">
                                     <tr>
-                                        <th class="fm-align">Sponsor Name :</th>
-                                        <td>&nbsp<input type="text" class="fm-custom-input" name="fm_Sponsor_name"></td>
+                                        <th class="fm-align">Sponsor Name <span class="reqcl">*</span>:</th>
+                                        <td>&nbsp<input type="text" class="fm-custom-input" name="fm_Sponsor_name"
+                                                required></td>
                                     </tr>
                                     <tr>
-                                        <th class="fm-align">Sponsor Email :</th>
+                                        <th class="fm-align">Sponsor Email <span class="reqcl">*</span>:</th>
                                         <td>&nbsp<input type="email" class="fm-custom-input" name="fm_Sponsor_email">
                                         </td>
                                     </tr>

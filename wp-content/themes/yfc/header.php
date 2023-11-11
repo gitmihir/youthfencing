@@ -140,6 +140,9 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="<?php echo get_site_url(); ?>/registration">Registration</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="<?php echo get_site_url(); ?>/wp-admin">Login</a>
+                                </li>
                                 <?php
                             }
                             ?>

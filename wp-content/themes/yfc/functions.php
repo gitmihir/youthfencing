@@ -829,10 +829,10 @@ function my_theme_create_new_form_data()
 
 	} else {
 		if ('POST' == $_SERVER['REQUEST_METHOD'] && !empty($_POST['action']) && $_POST['action'] == "front_post")
-			echo "<pre>";
-		print_r($_POST);
-		echo "</pre>";
-		$fm_Sponsor_name = $_POST['fm_Sponsor_name'];
+			// 	echo "<pre>";
+			// print_r($_POST);
+			// echo "</pre>";
+			$fm_Sponsor_name = $_POST['fm_Sponsor_name'];
 		$fm_Sponsor_email = $_POST['fm_Sponsor_email'];
 		$fm_Sponsor_phone = $_POST['fm_Sponsor_phone'];
 		$fmlumpsumamt = $_POST['fm-lump-sum-amt'];
@@ -848,12 +848,12 @@ function my_theme_create_new_form_data()
 		global $user_ID;
 		$post_type = 'pledge-form-data';
 
-		$fencers_id = $_POST['fencers_name'];
+		// $fencers_id = $_POST['fencers_name'];
 
-		$user_info = get_userdata($fencers_id);
-		
-		$first_name = $user_info->first_name;
-		get_user_meta();
+		// $user_info = get_userdata($fencers_id);
+
+		// $first_name = $user_info->first_name;
+		// get_user_meta();
 
 		$new_post = array(
 			'post_title' => $_POST['fm_Sponsor_name'],
@@ -899,6 +899,9 @@ function my_theme_create_new_form_data()
 		if (isset($fmpledgeperpointamt9)) {
 			add_post_meta($postid, 'Pledge per point amt 9', $fmpledgeperpointamt9, true);
 		}
+
+		wp_redirect(get_permalink(128));
+		die;
 	}
 }
 add_action('init', 'my_theme_create_new_form_data');
