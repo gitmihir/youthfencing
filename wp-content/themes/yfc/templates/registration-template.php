@@ -78,8 +78,6 @@ get_header();
                                                 </div>
                                             </div>
                                         </div>
-                                        <button type="submit" class="btn btn-danger btn-lg btnvalidate" name="submit"
-                                            data-mdb-ripple-color="dark">Register</button>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
@@ -198,6 +196,10 @@ get_header();
                                                     <input id="ftrackingurl" name="ftrackingurl" type="text"
                                                         class="form-control form-control-md" />
                                                 </div>
+                                            </div>
+                                            <div class="col-md-12 mb-3 pb-1">
+                                                <button type="submit" class="btn btn-danger btn-lg btnvalidate"
+                                                    name="submit" data-mdb-ripple-color="dark">Register</button>
                                             </div>
                                         </div>
                                     </div>

@@ -331,3 +331,6 @@ div[class*="errorclass_"] {
     border: 1px solid #f2f2f2;
   }
 }
+.btnvalidate{
+  float: right;
+}
