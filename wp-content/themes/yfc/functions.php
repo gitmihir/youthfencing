@@ -33,7 +33,7 @@ if (version_compare($GLOBALS['wp_version'], '4.4-alpha', '<')) {
 	require get_template_directory() . '/inc/back-compat.php';
 }
 
-if (!function_exists('twentysixteen_setup')) :
+if (!function_exists('twentysixteen_setup')):
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -316,7 +316,7 @@ function twentysixteen_widgets_init()
 }
 add_action('widgets_init', 'twentysixteen_widgets_init');
 
-if (!function_exists('twentysixteen_fonts_url')) :
+if (!function_exists('twentysixteen_fonts_url')):
 	/**
 	 * Register fonts for Twenty Sixteen.
 	 *
@@ -670,9 +670,9 @@ function my_theme_create_new_user()
 		if (!$user_id && email_exists($email) === false) {
 			$userid = wp_insert_user(
 				array(
-					'user_login' =>	$email,
+					'user_login' => $email,
 					'first_name' => $username,
-					'user_email' =>	$email,
+					'user_email' => $email,
 				)
 			);
 			wp_set_password($_POST['upassword'], $userid);
@@ -811,12 +811,94 @@ function getUserMetaData()
 add_action('wp_ajax_getUserMetaData', 'getUserMetaData');
 add_action('wp_ajax_nopriv_getUserMetaData', 'getUserMetaData');
 
-function custom_login_redirect($redirect_to, $request, $user)
+// function custom_login_redirect($redirect_to, $request, $user)
+// {
+// 	$user_role = $user->roles[0];
+// 	if ($user_role == 'subscriber') {
+// 		$redirect_to = get_site_url() . '/pledge-form/';
+// 	}
+// 	return $redirect_to;
+// }
+// add_filter('login_redirect', 'custom_login_redirect', 10, 3);
+function my_theme_create_new_form_data()
 {
-	$user_role = $user->roles[0];
-	if ($user_role == 'subscriber') {
-		$redirect_to = get_site_url() . '/pledge-form/';
+	if (
+		!isset($_POST['dasdasdasdasdsfgd'])
+		|| !wp_verify_nonce($_POST['dasdasdasdasdsfgd'], 'create_pledge_form_submit')
+	) {
+
+	} else {
+		if ('POST' == $_SERVER['REQUEST_METHOD'] && !empty($_POST['action']) && $_POST['action'] == "front_post")
+			echo "<pre>";
+		print_r($_POST);
+		echo "</pre>";
+		$fm_Sponsor_name = $_POST['fm_Sponsor_name'];
+		$fm_Sponsor_email = $_POST['fm_Sponsor_email'];
+		$fm_Sponsor_phone = $_POST['fm_Sponsor_phone'];
+		$fmlumpsumamt = $_POST['fm-lump-sum-amt'];
+		$fmpledgeperpointamt1 = $_POST['fm-pledge-per-point-amt1'];
+		$fmpledgeperpointamt2 = $_POST['fm-pledge-per-point-amt2'];
+		$fmpledgeperpointamt3 = $_POST['fm-pledge-per-point-amt3'];
+		$fmpledgeperpointamt4 = $_POST['fm-pledge-per-point-amt4'];
+		$fmpledgeperpointamt5 = $_POST['fm-pledge-per-point-amt5'];
+		$fmpledgeperpointamt6 = $_POST['fm-pledge-per-point-amt6'];
+		$fmpledgeperpointamt7 = $_POST['fm-pledge-per-point-amt7'];
+		$fmpledgeperpointamt8 = $_POST['fm-pledge-per-point-amt8'];
+		$fmpledgeperpointamt9 = $_POST['fm-pledge-per-point-amt9'];
+		global $user_ID;
+		$post_type = 'pledge-form-data';
+
+		$fencers_id = $_POST['fencers_name'];
+
+		$user_info = get_userdata($fencers_id);
+		
+		$first_name = $user_info->first_name;
+		get_user_meta();
+
+		$new_post = array(
+			'post_title' => $_POST['fm_Sponsor_name'],
+			'post_content' => 'Lorem Ipsum',
+			'post_status' => 'publish',
+			'post_type' => $post_type
+		);
+		$postid = wp_insert_post($new_post);
+
+		if (isset($_POST['fm_Sponsor_email'])) {
+			add_post_meta($postid, 'Sponsor Email', $_POST['fm_Sponsor_email'], true);
+		}
+		if (isset($fm_Sponsor_phone)) {
+			add_post_meta($postid, 'Sponsor Phone', $fm_Sponsor_phone, true);
+		}
+		if (isset($fmlumpsumamt)) {
+			add_post_meta($postid, 'Lump sum Amt', $fmlumpsumamt, true);
+		}
+		if (isset($fmpledgeperpointamt1)) {
+			add_post_meta($postid, 'Pledge per point amt 1', $fmpledgeperpointamt1, true);
+		}
+		if (isset($fmpledgeperpointamt2)) {
+			add_post_meta($postid, 'Pledge per point amt 2', $fmpledgeperpointamt2, true);
+		}
+		if (isset($fmpledgeperpointamt3)) {
+			add_post_meta($postid, 'Pledge per point amt 3', $fmpledgeperpointamt3, true);
+		}
+		if (isset($fmpledgeperpointamt4)) {
+			add_post_meta($postid, 'Pledge per point amt 4', $fmpledgeperpointamt4, true);
+		}
+		if (isset($fmpledgeperpointamt5)) {
+			add_post_meta($postid, 'Pledge per point amt 5', $fmpledgeperpointamt5, true);
+		}
+		if (isset($fmpledgeperpointamt6)) {
+			add_post_meta($postid, 'Pledge per point amt 6', $fmpledgeperpointamt6, true);
+		}
+		if (isset($fmpledgeperpointamt7)) {
+			add_post_meta($postid, 'Pledge per point amt 7', $fmpledgeperpointamt7, true);
+		}
+		if (isset($fmpledgeperpointamt8)) {
+			add_post_meta($postid, 'Pledge per point amt 8', $fmpledgeperpointamt8, true);
+		}
+		if (isset($fmpledgeperpointamt9)) {
+			add_post_meta($postid, 'Pledge per point amt 9', $fmpledgeperpointamt9, true);
+		}
 	}
-	return $redirect_to;
 }
-add_filter('login_redirect', 'custom_login_redirect', 10, 3);
+add_action('init', 'my_theme_create_new_form_data');

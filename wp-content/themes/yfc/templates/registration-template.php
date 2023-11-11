@@ -21,20 +21,27 @@ get_header();
                                         <div class="row">
                                             <div class="col-md-12 mb-3 pb-1">
                                                 <div class="form-outline">
-                                                    <label class="form-label" for="fencername">Fencer's Name <span class="reqcl">*</span></label>
-                                                    <input id="fencername" name="fencername" type="text" required class="form-control form-control-md" />
+                                                    <label class="form-label" for="fencername">Fencer's Name <span
+                                                            class="reqcl">*</span></label>
+                                                    <input id="fencername" name="fencername" type="text" required
+                                                        class="form-control form-control-md" />
                                                 </div>
                                             </div>
                                             <div class="col-md-12 mb-3 pb-1">
                                                 <div class="form-outline">
-                                                    <label class="form-label" for="femail">Email <span class="reqcl">*</span></label>
-                                                    <input id="femail" name="femail" type="email" class="form-control form-control-md" />
+                                                    <label class="form-label" for="femail">Email <span
+                                                            class="reqcl">*</span></label>
+                                                    <input id="femail" name="femail" type="email"
+                                                        class="form-control form-control-md" />
                                                 </div>
                                             </div>
                                             <div class="col-md-12 mb-3 pb-1">
                                                 <div class="form-outline">
-                                                    <label class="form-label" for="upassword">Password <span class="reqcl">*</span></label>
-                                                    <input id="upassword" onblur="validatePassword(this);" name="upassword" type="password" class="form-control form-control-md currentpass" />
+                                                    <label class="form-label" for="upassword">Password <span
+                                                            class="reqcl">*</span></label>
+                                                    <input id="upassword" onblur="validatePassword(this);"
+                                                        name="upassword" type="password"
+                                                        class="form-control form-control-md currentpass" />
                                                     <span class="errormsgpassword"></span>
                                                     <!-- <ul>
                                                         <li>At least one upper case English letter, (?=.*?[A-Z])</li>
@@ -47,8 +54,10 @@ get_header();
                                             </div>
                                             <div class="col-md-12 mb-3 pb-1">
                                                 <div class="form-outline">
-                                                    <label class="form-label" for="rpassword">Re-Password <span class="reqcl">*</span></label>
-                                                    <input id="rpassword" type="password" class="form-control form-control-md repeatpassword" />
+                                                    <label class="form-label" for="rpassword">Re-Password <span
+                                                            class="reqcl">*</span></label>
+                                                    <input id="rpassword" type="password"
+                                                        class="form-control form-control-md repeatpassword" />
                                                     <span class="repeatmsgpassword"></span>
                                                 </div>
                                             </div>
@@ -57,17 +66,20 @@ get_header();
                                             <div class="col-md-6 mb-3 pb-1">
                                                 <div class="form-outline">
                                                     <label class="form-label" for="fschool">School</label>
-                                                    <input id="fschool" name="fschool" type="text" class="form-control form-control-md" />
+                                                    <input id="fschool" name="fschool" type="text"
+                                                        class="form-control form-control-md" />
                                                 </div>
                                             </div>
                                             <div class="col-md-6 mb-3 pb-1">
                                                 <div class="form-outline">
                                                     <label class="form-label" for="fgrade">Grade</label>
-                                                    <input id="fgrade" name="fgrade" type="text" class="form-control form-control-md" />
+                                                    <input id="fgrade" name="fgrade" type="text"
+                                                        class="form-control form-control-md" />
                                                 </div>
                                             </div>
                                         </div>
-                                        <button type="submit" class="btn btn-danger btn-lg btnvalidate" name="submit" data-mdb-ripple-color="dark">Register</button>
+                                        <button type="submit" class="btn btn-danger btn-lg btnvalidate" name="submit"
+                                            data-mdb-ripple-color="dark">Register</button>
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
@@ -77,7 +89,8 @@ get_header();
                                             <div class="col-md-4 mb-3 pb-1">
                                                 <div class="form-outline">
                                                     <label class="form-label" for="weaponone">Weapon 1</label>
-                                                    <select id="weaponone" name="weaponone" class="form-control form-control-md">
+                                                    <select id="weaponone" name="weaponone"
+                                                        class="form-control form-control-md">
                                                         <option value="">Select Weapon</option>
                                                         <option value="Epee">Epee</option>
                                                         <option value="Foil">Foil</option>
@@ -88,7 +101,8 @@ get_header();
                                             <div class="col-md-4 mb-3 pb-1">
                                                 <div class="form-outline">
                                                     <label class="form-label" for="ratingone">Rating</label>
-                                                    <select id="ratingone" name="ratingone" class="form-control form-control-md">
+                                                    <select id="ratingone" name="ratingone"
+                                                        class="form-control form-control-md">
                                                         <option value="">Select Rating</option>
                                                         <option value="A">A</option>
                                                         <option value="B">B</option>
@@ -102,13 +116,15 @@ get_header();
                                             <div class="col-md-4 mb-3 pb-1">
                                                 <div class="form-outline">
                                                     <label class="form-label" for="ratingyearone">Rating Year</label>
-                                                    <input id="ratingyearone" name="ratingyearone" type="text" class="form-control form-control-md" />
+                                                    <input id="ratingyearone" name="ratingyearone" type="text"
+                                                        class="form-control form-control-md" />
                                                 </div>
                                             </div>
                                             <div class="col-md-4 mb-3 pb-1">
                                                 <div class="form-outline">
                                                     <label class="form-label" for="weapontwo">Weapon 2</label>
-                                                    <select id="weapontwo" name="weapontwo" class="form-control form-control-md">
+                                                    <select id="weapontwo" name="weapontwo"
+                                                        class="form-control form-control-md">
                                                         <option value="">Select Weapon</option>
                                                         <option value="Epee">Epee</option>
                                                         <option value="Foil">Foil</option>
@@ -119,7 +135,8 @@ get_header();
                                             <div class="col-md-4 mb-3 pb-1">
                                                 <div class="form-outline">
                                                     <label class="form-label" for="ratingtwo">Rating</label>
-                                                    <select id="ratingtwo" name="ratingtwo" class="form-control form-control-md">
+                                                    <select id="ratingtwo" name="ratingtwo"
+                                                        class="form-control form-control-md">
                                                         <option value="">Select Rating</option>
                                                         <option value="A">A</option>
                                                         <option value="B">B</option>
@@ -133,13 +150,15 @@ get_header();
                                             <div class="col-md-4 mb-3 pb-1">
                                                 <div class="form-outline">
                                                     <label class="form-label" for="ratingyeartwo">Rating Year</label>
-                                                    <input id="ratingyeartwo" name="ratingyeartwo" type="text" class="form-control form-control-md" />
+                                                    <input id="ratingyeartwo" name="ratingyeartwo" type="text"
+                                                        class="form-control form-control-md" />
                                                 </div>
                                             </div>
                                             <div class="col-md-4 mb-3 pb-1">
                                                 <div class="form-outline">
                                                     <label class="form-label" for="weaponthree">Weapon 3</label>
-                                                    <select id="weaponthree" name="weaponthree" class="form-control form-control-md">
+                                                    <select id="weaponthree" name="weaponthree"
+                                                        class="form-control form-control-md">
                                                         <option value="">Select Weapon</option>
                                                         <option value="Epee">Epee</option>
                                                         <option value="Foil">Foil</option>
@@ -150,7 +169,8 @@ get_header();
                                             <div class="col-md-4 mb-3 pb-1">
                                                 <div class="form-outline">
                                                     <label class="form-label" for="ratingthree">Rating</label>
-                                                    <select id="ratingthree" name="ratingthree" class="form-control form-control-md">
+                                                    <select id="ratingthree" name="ratingthree"
+                                                        class="form-control form-control-md">
                                                         <option value="">Select Rating</option>
                                                         <option value="A">A</option>
                                                         <option value="B">B</option>
@@ -164,7 +184,8 @@ get_header();
                                             <div class="col-md-4 mb-3 pb-1">
                                                 <div class="form-outline">
                                                     <label class="form-label" for="ratingyearthree">Rating Year</label>
-                                                    <input id="ratingyearthree" name="ratingyearthree" type="text" class="form-control form-control-md" />
+                                                    <input id="ratingyearthree" name="ratingyearthree" type="text"
+                                                        class="form-control form-control-md" />
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
@@ -172,8 +193,10 @@ get_header();
                                             </div>
                                             <div class="col-md-12 mb-3 pb-1">
                                                 <div class="form-outline">
-                                                    <label class="form-label" for="ftrackingurl">You can add your Fencing Tracker URL</label>
-                                                    <input id="ftrackingurl" onblur="validateURL(this);" name="ftrackingurl" type="text" class="form-control form-control-md" />
+                                                    <label class="form-label" for="ftrackingurl">You can add your
+                                                        Fencing Tracker URL</label>
+                                                    <input id="ftrackingurl" name="ftrackingurl" type="text"
+                                                        class="form-control form-control-md" />
                                                 </div>
                                             </div>
                                         </div>

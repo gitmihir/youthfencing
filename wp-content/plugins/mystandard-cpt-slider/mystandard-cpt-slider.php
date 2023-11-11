@@ -99,5 +99,42 @@ function standard_post_type_for_team()
 
 add_action('init', 'standard_post_type_for_team');
 
+function standard_post_type_for_pledge_form_data()
+{
+    $supports = array(
+        'title',
+        'editor',
+        'custom-fields',
+    );
+    $labels = array(
+        'name' => _x('Pledge', 'plural'),
+        'singular_name' => _x('Pledge', 'singular'),
+        'menu_name' => _x('Pledge', 'admin menu'),
+        'name_admin_bar' => _x('Pledge', 'admin bar'),
+        'add_new' => _x('Add New', 'add new'),
+        'add_new_item' => __('Add New Pledge'),
+        'new_item' => __('New Pledge'),
+        'edit_item' => __('Edit Pledge'),
+        'view_item' => __('View Pledge'),
+        'all_items' => __('All Pledge'),
+        'search_items' => __('Search Pledge'),
+        'not_found' => __('No Pledge found.'),
+    );
+    $args = array(
+        'supports' => $supports,
+        'labels' => $labels,
+        'menu_position' => 99,
+        'menu_icon' => 'dashicons-images-alt2',
+        'public' => true,
+        'query_var' => true,
+        'rewrite' => array('slug' => 'pledge-form-data'),
+        'has_archive' => true,
+        'hierarchical' => false,
+    );
+    register_post_type('pledge-form-data', $args);
+}
 
+add_action('init', 'standard_post_type_for_pledge_form_data');
+
+add_filter('acf/settings/remove_wp_meta_box', '__return_false');
 /* Custom Post type end */

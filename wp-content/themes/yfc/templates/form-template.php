@@ -4,14 +4,23 @@
  */
 get_header();
 $fencerusers = get_users();
-if (is_user_logged_in()) {
 ?>
+<form method="post" name="front_end" action="<?php echo $_SERVER['REQUEST_URI']; ?>">
+    <?php wp_nonce_field('create_pledge_form_submit', 'dasdasdasdasdsfgd'); ?>
+    <input type="hidden" name="data" value="foobarid">
     <section class="section-main">
         <div class="container">
             <section class="section-one">
                 <div class="row">
                     <div class="col-md-12 col-xs-12 col-lg-12">
-                        <h1 class="fm-header">Youth Fencing Chicago's Fence-A-Thon</h1>
+                        <h1 class="fm-header">
+                            <?php
+                            if (get_field('pledge_form_title')) {
+                                echo get_field('pledge_form_title');
+                            } else {
+                                echo "Please Enter your title";
+                            } ?>
+                        </h1>
                     </div>
                 </div>
             </section>
@@ -20,36 +29,85 @@ if (is_user_logged_in()) {
                 <div class="row">
                     <div class="col-md-3">
                         <div class="fm-left-image">
-                            <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2023/10/IMG_5264-e1698523272661.png" class="limg">
+                            <?php if (get_field('pledge_image_one')) {
+                                ?>
+                                <img src="<?php echo get_field('pledge_image_one'); ?>" class="limg">
+                                <?php
+                            } ?>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="fm-center-content">
                             <div class="fm-cc-one">
-                                <h3>The Junior Olympics</h3>
-                                <strong>Cadet Epee Division</strong>
+                                <h3>
+                                    <?php
+                                    if (get_field('pledge_center_content_title')) {
+                                        echo get_field('pledge_center_content_title');
+                                    }
+                                    ?>
+                                </h3>
+                                <strong>
+                                    <?php
+                                    if (get_field('pledge_center_content_sub_title')) {
+                                        echo get_field('pledge_center_content_sub_title');
+                                    }
+                                    ?>
+                                </strong>
                             </div>
                             <div class="fm-cc-second mt-3">
                                 <p>
-                                    <strong>When:</strong>February 16-19, 2024
+                                    <strong>When:</strong>
+                                    <?php
+                                    if (get_field('pledge_center_content_when')) {
+                                        echo get_field('pledge_center_content_when');
+                                    }
+                                    ?>
                                     <br>
-                                    <strong>Where:</strong>Charlotte Convention Center
+                                    <strong>Where:</strong>
+                                    <?php
+                                    if (get_field('pledge_center_content_where')) {
+                                        echo get_field('pledge_center_content_where');
+                                    }
+                                    ?>
                                 </p>
                             </div>
                             <div class="fm-cc-third mt-3">
-                                <p>Giving back through fencing</p>
+                                <p>
+                                    <?php
+                                    if (get_field('pledge_center_content_line')) {
+                                        echo get_field('pledge_center_content_line');
+                                    }
+                                    ?>
+                                </p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="fm-left-image">
-                            <img src="<?php echo get_site_url(); ?>/wp-content/uploads/2023/10/Picture1.png" class="limg">
+                            <?php if (get_field('pledge_image_two')) {
+                                ?>
+                                <img src="<?php echo get_field('pledge_image_two'); ?>" class="limg">
+                                <?php
+                            } ?>
                         </div>
                         <div class="fm-cc-third mt-3">
                             <p>
-                                <strong>Youth Fencing</strong>Chicago
+                                <?php
+                                if (get_field('pledge_image_two_title_one')) {
+                                    echo get_field('pledge_image_two_title_one');
+                                }
+                                ?>
                                 <br>
-                                <a target="_blank" href="mailto:youthfencingchicago.com">youthfencingchicago.com</a>
+                                <?php
+                                if (get_field('pledge_image_two_link')) {
+                                    ?>
+                                    <a target="_blank" href="<?php echo get_field('pledge_image_two_link'); ?>">
+                                        <?php echo get_field('pledge_image_two_link'); ?>
+                                    </a>
+                                    <?php
+                                }
+                                ?>
+
                             </p>
                         </div>
                     </div>
@@ -59,32 +117,41 @@ if (is_user_logged_in()) {
                 <div class="row">
                     <div class="col-md-12">
                         <div class="fm-content mt-3">
-                            <p>Fencing is not than just a sport, it's a developmental tool that carries great benefits for the growth of young children. Fencing
-                                is unique sport that has so many benefits, but many kids (and parents) don't have access to this opportunity. We want to
-                                change this. We want to get into your school or your organization. We want to teach your young kids, in small groups, to
-                                fence! We want the wonderful developmental benefits to apply for all the kids. Mostly, we want to make fencing fun and
-                                accessible to all young kids who might otherwise not get a chance to. We do this ALL for FREE ! That's why we are asking for
-                                your pledge.
+                            <p>
+                                <?php
+                                if (get_field('pledge_main_content')) {
+                                    echo get_field('pledge_main_content');
+                                }
+                                ?>
                             </p>
                         </div>
                         <div class="fm-content-i">
-                            <i>A very Big Thank You in advance for taking the time to help Chicago kids. - The Youth Fencing Chicago Team</i>
+                            <i>
+                                <?php
+                                if (get_field('pledge_content_sub_line')) {
+                                    echo get_field('pledge_content_sub_line');
+                                }
+                                ?>
+                            </i>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <table class="table mt-4 fm-table">
+                        <table class="table mt-4 fm-table table-responsive">
                             <tr>
                                 <th class="fm-align">Fencer's Name :</th>
                                 <td>
-                                    <input type="hidden" class="ajaxurlwp" value="<?php echo admin_url('admin-ajax.php'); ?>">
-                                    <select class="form-control getfencerdata">
+                                    <input type="hidden" class="ajaxurlwp"
+                                        value="<?php echo admin_url('admin-ajax.php'); ?>">
+                                    <select class="form-control getfencerdata fenceruserid" name="fencers_name">
                                         <option value="">Select Fencer</option>
                                         <?php
                                         foreach ($fencerusers as $user) {
                                             if ($user->ID !== 1) {
-                                        ?>
-                                                <option value="<?php echo esc_html($user->ID); ?>"><?php echo esc_html($user->display_name); ?></option>
-                                        <?php
+                                                ?>
+                                                <option value="<?php echo esc_html($user->ID); ?>">
+                                                    <?php echo esc_html($user->display_name); ?>
+                                                </option>
+                                                <?php
                                             }
                                         }
                                         ?>
@@ -159,11 +226,13 @@ if (is_user_logged_in()) {
                                     </tr>
                                     <tr>
                                         <th class="fm-align">Sponsor Email :</th>
-                                        <td>&nbsp<input type="email" class="fm-custom-input" name="fm_Sponsor_email"></td>
+                                        <td>&nbsp<input type="email" class="fm-custom-input" name="fm_Sponsor_email">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <th class="fm-align">Sponsor Phone :</th>
-                                        <td>&nbsp<input type="text" class="fm-custom-input" name="fm_Sponsor_phone"></td>
+                                        <td>&nbsp<input type="text" class="fm-custom-input" name="fm_Sponsor_phone">
+                                        </td>
                                     </tr>
                                 </table>
                             </div>
@@ -193,13 +262,15 @@ if (is_user_logged_in()) {
                             <tbody>
                                 <tr>
                                     <td colspan="3"><strong>Preliminary Round Robin</strong></td>
-                                    <td rowspan="2">$<input placeholder="lump sum pledge" type="text" class="fm-custom-in fm-lumpsum"></td>
+                                    <td rowspan="2">$<input placeholder="lump sum pledge" type="text"
+                                            class="fm-custom-in fm-lumpsum" name="fm-lump-sum-amt"></td>
                                     <td class="fm-align-c" colspan="2">Calculated once tournament completes</td>
                                 </tr>
                                 <tr>
                                     <td class="fm-align" colspan="1">Pools</td>
                                     <td class="fm-align-c">30</td>
-                                    <td>$<input type="text" placeholder="pledge per point" class="fm-custom-in"></td>
+                                    <td>$<input type="text" placeholder="pledge per point"
+                                            name="fm-pledge-per-point-amt1" class="fm-custom-in"></td>
                                     <td class="fm-align-c"></td>
                                     <td class="fm-align-c">$0.00</td>
                                 </tr>
@@ -209,7 +280,8 @@ if (is_user_logged_in()) {
                                 <tr>
                                     <td class="fm-align" colspan="1">Table 256</td>
                                     <td class="fm-align-c">15</td>
-                                    <td>$<input type="text" placeholder="pledge per point" class="fm-custom-in"></td>
+                                    <td>$<input type="text" placeholder="pledge per point"
+                                            name="fm-pledge-per-point-amt2" class="fm-custom-in"></td>
                                     <td class="fm-align-c fm-bottom-border-remove"></td>
                                     <td class="fm-align-c"></td>
                                     <td class="fm-align-c">$0.00</td>
@@ -217,7 +289,8 @@ if (is_user_logged_in()) {
                                 <tr>
                                     <td class="fm-align" colspan="1">Table 128</td>
                                     <td class="fm-align-c">15</td>
-                                    <td>$<input type="text" placeholder="pledge per point" class="fm-custom-in"></td>
+                                    <td>$<input type="text" placeholder="pledge per point"
+                                            name="fm-pledge-per-point-amt3" class="fm-custom-in"></td>
                                     <td class="fm-align-c fm-bottom-border-remove"></td>
                                     <td class="fm-align-c"></td>
                                     <td class="fm-align-c">$0.00</td>
@@ -225,7 +298,8 @@ if (is_user_logged_in()) {
                                 <tr>
                                     <td class="fm-align" colspan="1">Table 64</td>
                                     <td class="fm-align-c">15</td>
-                                    <td>$<input type="text" placeholder="pledge per point" class="fm-custom-in"></td>
+                                    <td>$<input type="text" placeholder="pledge per point"
+                                            name="fm-pledge-per-point-amt4" class="fm-custom-in"></td>
                                     <td class="fm-align-c fm-bottom-border-remove"></td>
                                     <td class="fm-align-c"></td>
                                     <td class="fm-align-c">$0.00</td>
@@ -233,7 +307,8 @@ if (is_user_logged_in()) {
                                 <tr>
                                     <td class="fm-align" colspan="1">Table 32</td>
                                     <td class="fm-align-c">15</td>
-                                    <td>$<input type="text" placeholder="pledge per point" class="fm-custom-in"></td>
+                                    <td>$<input type="text" placeholder="pledge per point"
+                                            name="fm-pledge-per-point-amt5" class="fm-custom-in"></td>
                                     <td class="fm-align-c fm-bottom-border-remove"></td>
                                     <td class="fm-align-c"></td>
                                     <td class="fm-align-c">$0.00</td>
@@ -241,7 +316,8 @@ if (is_user_logged_in()) {
                                 <tr>
                                     <td class="fm-align" colspan="1">Table 16</td>
                                     <td class="fm-align-c">15</td>
-                                    <td>$<input type="text" placeholder="pledge per point" class="fm-custom-in"></td>
+                                    <td>$<input type="text" placeholder="pledge per point"
+                                            name="fm-pledge-per-point-amt6" class="fm-custom-in"></td>
                                     <td class="fm-align-c fm-bottom-border-remove"></td>
                                     <td class="fm-align-c"></td>
                                     <td class="fm-align-c">$0.00</td>
@@ -249,7 +325,8 @@ if (is_user_logged_in()) {
                                 <tr>
                                     <td class="fm-align" colspan="1">Table 8</td>
                                     <td class="fm-align-c">15</td>
-                                    <td>$<input type="text" placeholder="pledge per point" class="fm-custom-in"></td>
+                                    <td>$<input type="text" placeholder="pledge per point"
+                                            name="fm-pledge-per-point-amt7" class="fm-custom-in"></td>
                                     <td class="fm-align-c fm-bottom-border-remove"></td>
                                     <td class="fm-align-c"></td>
                                     <td class="fm-align-c">$0.00</td>
@@ -257,7 +334,8 @@ if (is_user_logged_in()) {
                                 <tr>
                                     <td class="fm-align" colspan="1">Semi-Final</td>
                                     <td class="fm-align-c">15</td>
-                                    <td>$<input type="text" placeholder="pledge per point" class="fm-custom-in"></td>
+                                    <td>$<input type="text" placeholder="pledge per point"
+                                            name="fm-pledge-per-point-amt8" class="fm-custom-in"></td>
                                     <td class="fm-align-c fm-bottom-border-remove"></td>
                                     <td class="fm-align-c"></td>
                                     <td class="fm-align-c">$0.00</td>
@@ -265,7 +343,8 @@ if (is_user_logged_in()) {
                                 <tr>
                                     <td class="fm-align" colspan="1">Final</td>
                                     <td class="fm-align-c">15</td>
-                                    <td>$<input type="text" placeholder="pledge per point" class="fm-custom-in"></td>
+                                    <td>$<input type="text" placeholder="pledge per point"
+                                            name="fm-pledge-per-point-amt9" class="fm-custom-in"></td>
                                     <td class="fm-align-c fm-bottom-border-remove"></td>
                                     <td class="fm-align-c"></td>
                                     <td class="fm-align-c">$0.00</td>
@@ -280,6 +359,8 @@ if (is_user_logged_in()) {
                                 </tr>
                             </tbody>
                         </table>
+                        <button type="submit" class="btn btn-danger slignbtn">Submit</button>
+                        <input type="hidden" name="action" value="pledge-form-data" />
                     </div>
                     <div class="col-md-12">
                         <div class="fm-custom-text">
@@ -290,7 +371,8 @@ if (is_user_logged_in()) {
                                 <br>
                                 * Remember to check with your company about matching donations.
                                 <br>
-                                * A FencingTimeLive link can be sent to follow the progress of the tournament upon request
+                                * A FencingTimeLive link can be sent to follow the progress of the tournament upon
+                                request
                             </p>
                         </div>
                     </div>
@@ -298,6 +380,6 @@ if (is_user_logged_in()) {
             </section>
         </div>
     </section>
+</form>
 <?php
-}
 get_footer();

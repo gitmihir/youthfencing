@@ -259,22 +259,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 }
 
 .gradient-custom-2 {
-  /* fallback for old browsers */
-  background: #a1c4fd;
-
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-linear-gradient(
-    to right,
-    rgba(161, 196, 253, 1),
-    rgba(194, 233, 251, 1)
-  );
-
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background: linear-gradient(
-    to right,
-    rgba(161, 196, 253, 1),
-    rgba(194, 233, 251, 1)
-  );
+  background-color: #efefef;
 }
 
 .bg-indigo {
@@ -322,4 +307,27 @@ div[class*="errorclass_"] {
 }
 .fmcwidth {
   width: 22%;
+}
+.slignbtn {
+  float: right;
+}
+@media only screen and (max-width: 600px) {
+  .section-main {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .fm-cc-second p {
+    line-height: 13px;
+    text-align: center;
+    margin-left: 0;
+  }
+  .fm-align {
+    width: 40%;
+    text-align: left;
+  }
+  .fm-table th,
+  .fm-table td {
+    padding: 2px !important;
+    border: 1px solid #f2f2f2;
+  }
 }
