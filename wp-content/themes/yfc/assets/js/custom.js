@@ -294,6 +294,17 @@ $(".getfencerdata").on("change", function () {
   $(".fmurl a").html("");
   $(".fmemail a").html("");
 
+  // $(".fmschoolname").val("");
+  // $(".fmemail").val("");
+  // $(".fmgrade").val("");
+  // $(".fmwp1").val("");
+  // $(".fmwp2").val("");
+  // $(".fmwp3").val("");
+  // $(".fmrt1").val("");
+  // $(".fmrt2").val("");
+  // $(".fmrt3").val("");
+  // $(".fmurl").val("");
+
   let getuserid = $(this).find("option:selected").val();
   let ajaxurlwp = $(".ajaxurlwp").val();
 
@@ -320,7 +331,42 @@ $(".getfencerdata").on("change", function () {
         $(".fmurl a").html("&nbsp" + splits[11]);
         $(".fmemail a").attr("href", "mailto:" + splits[12]);
         $(".fmemail a").html("&nbsp" + splits[12]);
+
+        // $(".fmschoolname_a").val(splits[0]);
+        // $(".fmemail_a").val(splits[12]);
+        // $(".fmgrade_a").val(splits[1]);
+        // $(".fmwp1_a").val(splits[2]);
+        // $(".fmwp2_a").val(splits[5]);
+        // $(".fmwp3_a").val(splits[8]);
+        // $(".fmrt1_a").val(splits[4]);
+        // $(".fmrt2_a").val(splits[7]);
+        // $(".fmrt3_a").val(splits[10]);
+        // $(".fmurl_a").val(splits[11]);
       }
     },
   });
 });
+
+// $.urlParam = function (name) {
+//   var results = new RegExp("[?&]" + name + "=([^&#]*)").exec(
+//     window.location.href
+//   );
+//   if (results == null) {
+//     return null;
+//   }
+//   return decodeURI(results[1]) || 0;
+// };
+// console.log("QueryVar", $.urlParam("qwret"));
+// var urlprm = $.urlParam("qwret");
+// if (urlprm === "sdf") {
+//   let fmschoolname_a = $(".fmschoolname_a").val();
+//   let fmemail_a = $(".fmemail_a").val();
+//   let fmgrade_a = $(".fmgrade_a").val();
+//   let fmwp1_a = $(".fmwp1_a").val();
+//   let fmwp2_a = $(".fmwp2_a").val();
+//   let fmwp3_a = $(".fmwp3_a").val();
+//   let fmrt1_a = $(".fmrt1_a").val();
+//   let fmrt2_a = $(".fmrt2_a").val();
+//   let fmrt3_a = $(".fmrt3_a").val();
+//   let fmurl_a = $(".fmurl_a").val();
+// }

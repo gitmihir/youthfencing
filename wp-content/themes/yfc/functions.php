@@ -712,6 +712,9 @@ function my_theme_create_new_user()
 			if (isset($_POST['ftrackingurl'])) {
 				add_user_meta($userid, 'ftrackingurl', $_POST['ftrackingurl'], true);
 			}
+
+			$url = get_site_url() . "/wp-admin";
+			wp_redirect($url);
 		} else {
 			return false; //username exists already
 		}
@@ -859,7 +862,7 @@ function my_theme_create_new_form_data()
 		$weaponthree = get_user_meta($fencers_id, 'weaponthree', true);
 		$ratingthree = get_user_meta($fencers_id, 'ratingthree', true);
 		$ratingyearthree = get_user_meta($fencers_id, 'ratingyearthree', true);
-		$ftrackingurl = get_user_meta($fencers_id, 'ftrackingurl', true);
+		//$ftrackingurl = get_user_meta($fencers_id, 'ftrackingurl', true);
 
 		$new_post = array(
 			'post_title' => $_POST['fm_Sponsor_name'],
@@ -885,7 +888,7 @@ function my_theme_create_new_form_data()
 		add_post_meta($postid, '12_Fencer_Rating_Three', $ratingthree, true);
 		add_post_meta($postid, '13_Fencer_Rating_Year_Three', $ratingyearthree, true);
 
-		add_post_meta($postid, '14_Fencer_Tracking_Url', $ftrackingurl, true);
+		//add_post_meta($postid, '14_Fencer_Tracking_Url', $ftrackingurl, true);
 
 		if (isset($_POST['fm_Sponsor_email'])) {
 			add_post_meta($postid, '15_Sponsor_Email', $_POST['fm_Sponsor_email'], true);
@@ -926,7 +929,139 @@ function my_theme_create_new_form_data()
 		if (isset($_POST['fencers_name'])) {
 			add_post_meta($postid, '27_FencerId', $_POST['fencers_name'], true);
 		}
-		wp_redirect(get_permalink(128));
+
+		$data = '<div>';
+		$data += "<h3>Fencer's Information</h3>";
+		$data += "<table>";
+		if ($YFReg_school) {
+			$data += "<tr>";
+			$data += "<th>School</th>";
+			$data += "<td>" . $YFReg_school . "</td>";
+			$data += "</tr>";
+		}
+		if ($user_email) {
+			$data += "<tr>";
+			$data += "<th>School</th>";
+			$data += "<td>" . $user_email . "</td>";
+			$data += "</tr>";
+		}
+		if ($YFReg_Grade) {
+			$data += "<tr>";
+			$data += "<th>Grade</th>";
+			$data += "<td>" . $YFReg_Grade . "</td>";
+			$data += "</tr>";
+		}
+		if ($weaponone) {
+			$data += "<tr>";
+			$data += "<th>Weapon 1</th>";
+			$data += "<td>" . $weaponone . "</td>";
+			$data += "</tr>";
+		}
+		if ($ratingone) {
+			$data += "<tr>";
+			$data += "<th>Rating 1</th>";
+			$data += "<td>" . $ratingone . "</td>";
+			$data += "</tr>";
+		}
+		if ($weapontwo) {
+			$data += "<tr>";
+			$data += "<th>Weapon 2</th>";
+			$data += "<td>" . $weapontwo . "</td>";
+			$data += "</tr>";
+		}
+		if ($ratingtwo) {
+			$data += "<tr>";
+			$data += "<th>Rating 2</th>";
+			$data += "<td>" . $ratingtwo . "</td>";
+			$data += "</tr>";
+		}
+		if ($weaponthree) {
+			$data += "<tr>";
+			$data += "<th>Weapon 3</th>";
+			$data += "<td>" . $weaponthree . "</td>";
+			$data += "</tr>";
+		}
+		if ($ratingthree) {
+			$data += "<tr>";
+			$data += "<th>Rating 3</th>";
+			$data += "<td>" . $ratingthree . "</td>";
+			$data += "</tr>";
+		}
+		$data += "</table>";
+		$data += "</div>";
+		$data += "<h3>Pledge Amount Details</h3>";
+		$data += "<table>";
+		if (isset($fmpledgeperpointamt1)) {
+			$data += "<tr>";
+			$data += "<th>Pools</th>";
+			$data += "<td>" . $fmpledgeperpointamt1 . "</td>";
+			$data += "</tr>";
+		}
+		if (isset($fmpledgeperpointamt2)) {
+			$data += "<tr>";
+			$data += "<th>Table 256</th>";
+			$data += "<td>" . $fmpledgeperpointamt2 . "</td>";
+			$data += "</tr>";
+		}
+		if (isset($fmpledgeperpointamt3)) {
+			$data += "<tr>";
+			$data += "<th>Table 128</th>";
+			$data += "<td>" . $fmpledgeperpointamt3 . "</td>";
+			$data += "</tr>";
+		}
+		if (isset($fmpledgeperpointamt4)) {
+			$data += "<tr>";
+			$data += "<th>Table 64</th>";
+			$data += "<td>" . $fmpledgeperpointamt4 . "</td>";
+			$data += "</tr>";
+		}
+		if (isset($fmpledgeperpointamt5)) {
+			$data += "<tr>";
+			$data += "<th>Table 32</th>";
+			$data += "<td>" . $fmpledgeperpointamt5 . "</td>";
+			$data += "</tr>";
+		}
+		if (isset($fmpledgeperpointamt6)) {
+			$data += "<tr>";
+			$data += "<th>Table 16</th>";
+			$data += "<td>" . $fmpledgeperpointamt6 . "</td>";
+			$data += "</tr>";
+		}
+		if (isset($fmpledgeperpointamt7)) {
+			$data += "<tr>";
+			$data += "<th>Table 8</th>";
+			$data += "<td>" . $fmpledgeperpointamt7 . "</td>";
+			$data += "</tr>";
+		}
+		if (isset($fmpledgeperpointamt8)) {
+			$data += "<tr>";
+			$data += "<th>Semi-Final</th>";
+			$data += "<td>" . $fmpledgeperpointamt8 . "</td>";
+			$data += "</tr>";
+		}
+		if (isset($fmpledgeperpointamt9)) {
+			$data += "<tr>";
+			$data += "<th>Final</th>";
+			$data += "<td>" . $fmpledgeperpointamt9 . "</td>";
+			$data += "</tr>";
+		}
+		if (isset($fmlumpsumamt)) {
+			$data += "<tr>";
+			$data += "<th>Lump Sum Donation</th>";
+			$data += "<td>" . $fmlumpsumamt . "</td>";
+			$data += "</tr>";
+		}
+		$data += "</table>";
+
+		$to = $_POST['fm_Sponsor_email'];
+		$subject = 'Pledge Form Data';
+		$body = $data;
+		$headers = array('Content-Type: text/html; charset=UTF-8', 'From: YouthFencingChicago <support@example.com>');
+
+		wp_mail($to, $subject, $body, $headers);
+
+		$url = get_site_url() . "/thank-you/";
+		wp_redirect($url);
 		die;
 
 	}

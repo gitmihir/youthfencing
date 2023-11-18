@@ -5,7 +5,7 @@
 get_header();
 $fencerusers = get_users();
 ?>
-<form method="post" name="front_end" action="<?php echo $_SERVER['REQUEST_URI']; ?>">
+<form method="post" id="pledgeform" name="front_end" action="<?php echo $_SERVER['REQUEST_URI']; ?>">
     <?php wp_nonce_field('create_pledge_form_submit', 'dasdasdasdasdsfgd'); ?>
     <input type="hidden" name="data" value="foobarid">
     <section class="section-main">
@@ -360,6 +360,18 @@ $fencerusers = get_users();
                                 </tr>
                             </tbody>
                         </table>
+
+                        <!-- <input type="hidden" class="fmschoolname_a">
+                        <input type="hidden" class="fmemail_a">
+                        <input type="hidden" class="fmgrade_a">
+                        <input type="hidden" class="fmwp1_a">
+                        <input type="hidden" class="fmwp2_a">
+                        <input type="hidden" class="fmwp3_a">
+                        <input type="hidden" class="fmrt1_a">
+                        <input type="hidden" class="fmrt2_a">
+                        <input type="hidden" class="fmrt3_a">
+                        <input type="hidden" class="fmurl_a"> -->
+
                         <button type="submit" class="btn btn-danger slignbtn">Submit</button>
                         <input type="hidden" name="action" value="pledge-form-data" />
                     </div>
