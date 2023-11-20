@@ -43,13 +43,13 @@ get_header();
                                                         name="upassword" type="password"
                                                         class="form-control form-control-md currentpass" />
                                                     <span class="errormsgpassword"></span>
-                                                    <!-- <ul>
-                                                        <li>At least one upper case English letter, (?=.*?[A-Z])</li>
-                                                        <li>At least one lower case English letter, (?=.*?[a-z])</li>
-                                                        <li>At least one digit, (?=.*?[0-9])</li>
-                                                        <li>At least one special character, (?=.*?[#?!@$%^&*-])</li>
-                                                        <li>Minimum eight in length .{8,} (with the anchors)</li>
-                                                    </ul> -->
+                                                    <ul class="passwordrules">
+                                                        <li>At least one upper case letter, ([A-Z])</li>
+                                                        <li>At least one lower case letter, ([a-z])</li>
+                                                        <li>At least one digit, ([0-9])</li>
+                                                        <li>At least one special character, ([#?!@$%^&*-])</li>
+                                                        <li>Minimum eight in length .{8}</li>
+                                                    </ul>
                                                 </div>
                                             </div>
                                             <div class="col-md-12 mb-3 pb-1">

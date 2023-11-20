@@ -364,3 +364,8 @@ select {
 select::-ms-expand {
   display: none;
 }
+.passwordrules {
+  font-size: 11px;
+  font-weight: 600;
+  color: #000000;
+}

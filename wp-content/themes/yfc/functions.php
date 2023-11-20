@@ -713,8 +713,9 @@ function my_theme_create_new_user()
 				add_user_meta($userid, 'ftrackingurl', $_POST['ftrackingurl'], true);
 			}
 
-			$url = get_site_url() . "/wp-admin";
+			$url = get_site_url() . "/register-redirect";
 			wp_redirect($url);
+			die();
 		} else {
 			return false; //username exists already
 		}
@@ -929,129 +930,128 @@ function my_theme_create_new_form_data()
 		if (isset($_POST['fencers_name'])) {
 			add_post_meta($postid, '27_FencerId', $_POST['fencers_name'], true);
 		}
-
 		$data = '<div>';
-		$data += "<h3>Fencer's Information</h3>";
-		$data += "<table>";
+		$data .= "<h3>Fencer's Information</h3>";
+		$data .= "<table border='1' style='border-collapse:collapse'>";
 		if ($YFReg_school) {
-			$data += "<tr>";
-			$data += "<th>School</th>";
-			$data += "<td>" . $YFReg_school . "</td>";
-			$data += "</tr>";
+			$data .= "<tr>";
+			$data .= "<th style='padding: 10px;text-align: left;'>School</th>";
+			$data .= "<td style='padding: 10px;width: 35%;'>" . $YFReg_school . "</td>";
+			$data .= "</tr>";
 		}
 		if ($user_email) {
-			$data += "<tr>";
-			$data += "<th>School</th>";
-			$data += "<td>" . $user_email . "</td>";
-			$data += "</tr>";
+			$data .= "<tr>";
+			$data .= "<th style='padding: 10px;text-align: left;'>Email</th>";
+			$data .= "<td style='padding: 10px;width: 35%;'>" . $user_email . "</td>";
+			$data .= "</tr>";
 		}
 		if ($YFReg_Grade) {
-			$data += "<tr>";
-			$data += "<th>Grade</th>";
-			$data += "<td>" . $YFReg_Grade . "</td>";
-			$data += "</tr>";
+			$data .= "<tr>";
+			$data .= "<th style='padding: 10px;text-align: left;'>Grade</th>";
+			$data .= "<td style='padding: 10px;width: 35%;'>" . $YFReg_Grade . "</td>";
+			$data .= "</tr>";
 		}
 		if ($weaponone) {
-			$data += "<tr>";
-			$data += "<th>Weapon 1</th>";
-			$data += "<td>" . $weaponone . "</td>";
-			$data += "</tr>";
+			$data .= "<tr>";
+			$data .= "<th style='padding: 10px;text-align: left;'>Weapon 1</th>";
+			$data .= "<td style='padding: 10px;width: 35%;'>" . $weaponone . "</td>";
+			$data .= "</tr>";
 		}
 		if ($ratingone) {
-			$data += "<tr>";
-			$data += "<th>Rating 1</th>";
-			$data += "<td>" . $ratingone . "</td>";
-			$data += "</tr>";
+			$data .= "<tr>";
+			$data .= "<th style='padding: 10px;text-align: left;'>Rating 1</th>";
+			$data .= "<td style='padding: 10px;width: 35%;'>" . $ratingone . "</td>";
+			$data .= "</tr>";
 		}
 		if ($weapontwo) {
-			$data += "<tr>";
-			$data += "<th>Weapon 2</th>";
-			$data += "<td>" . $weapontwo . "</td>";
-			$data += "</tr>";
+			$data .= "<tr>";
+			$data .= "<th style='padding: 10px;text-align: left;'>Weapon 2</th>";
+			$data .= "<td style='padding: 10px;width: 35%;'>" . $weapontwo . "</td>";
+			$data .= "</tr>";
 		}
 		if ($ratingtwo) {
-			$data += "<tr>";
-			$data += "<th>Rating 2</th>";
-			$data += "<td>" . $ratingtwo . "</td>";
-			$data += "</tr>";
+			$data .= "<tr>";
+			$data .= "<th style='padding: 10px;text-align: left;'>Rating 2</th>";
+			$data .= "<td style='padding: 10px;width: 35%;'>" . $ratingtwo . "</td>";
+			$data .= "</tr>";
 		}
 		if ($weaponthree) {
-			$data += "<tr>";
-			$data += "<th>Weapon 3</th>";
-			$data += "<td>" . $weaponthree . "</td>";
-			$data += "</tr>";
+			$data .= "<tr>";
+			$data .= "<th style='padding: 10px;text-align: left;'>Weapon 3</th>";
+			$data .= "<td style='padding: 10px;width: 35%;'>" . $weaponthree . "</td>";
+			$data .= "</tr>";
 		}
 		if ($ratingthree) {
-			$data += "<tr>";
-			$data += "<th>Rating 3</th>";
-			$data += "<td>" . $ratingthree . "</td>";
-			$data += "</tr>";
+			$data .= "<tr>";
+			$data .= "<th style='padding: 10px;text-align: left;'>Rating 3</th>";
+			$data .= "<td style='padding: 10px;width: 35%;'>" . $ratingthree . "</td>";
+			$data .= "</tr>";
 		}
-		$data += "</table>";
-		$data += "</div>";
-		$data += "<h3>Pledge Amount Details</h3>";
-		$data += "<table>";
+		$data .= "</table>";
+		$data .= "<h3>Pledge Amount Details</h3>";
+		$data .= "<table border='1' style='border-collapse:collapse'>";
 		if (isset($fmpledgeperpointamt1)) {
-			$data += "<tr>";
-			$data += "<th>Pools</th>";
-			$data += "<td>" . $fmpledgeperpointamt1 . "</td>";
-			$data += "</tr>";
+			$data .= "<tr>";
+			$data .= "<th style='padding: 10px;text-align: left;'>Pools</th>";
+			$data .= "<td style='padding: 10px;width: 35%;'>" . $fmpledgeperpointamt1 . "</td>";
+			$data .= "</tr>";
 		}
 		if (isset($fmpledgeperpointamt2)) {
-			$data += "<tr>";
-			$data += "<th>Table 256</th>";
-			$data += "<td>" . $fmpledgeperpointamt2 . "</td>";
-			$data += "</tr>";
+			$data .= "<tr>";
+			$data .= "<th style='padding: 10px;text-align: left;'>Table 256</th>";
+			$data .= "<td style='padding: 10px;width: 35%;'>" . $fmpledgeperpointamt2 . "</td>";
+			$data .= "</tr>";
 		}
 		if (isset($fmpledgeperpointamt3)) {
-			$data += "<tr>";
-			$data += "<th>Table 128</th>";
-			$data += "<td>" . $fmpledgeperpointamt3 . "</td>";
-			$data += "</tr>";
+			$data .= "<tr>";
+			$data .= "<th style='padding: 10px;text-align: left;'>Table 128</th>";
+			$data .= "<td style='padding: 10px;width: 35%;'>" . $fmpledgeperpointamt3 . "</td>";
+			$data .= "</tr>";
 		}
 		if (isset($fmpledgeperpointamt4)) {
-			$data += "<tr>";
-			$data += "<th>Table 64</th>";
-			$data += "<td>" . $fmpledgeperpointamt4 . "</td>";
-			$data += "</tr>";
+			$data .= "<tr>";
+			$data .= "<th style='padding: 10px;text-align: left;'>Table 64</th>";
+			$data .= "<td style='padding: 10px;width: 35%;'>" . $fmpledgeperpointamt4 . "</td>";
+			$data .= "</tr>";
 		}
 		if (isset($fmpledgeperpointamt5)) {
-			$data += "<tr>";
-			$data += "<th>Table 32</th>";
-			$data += "<td>" . $fmpledgeperpointamt5 . "</td>";
-			$data += "</tr>";
+			$data .= "<tr>";
+			$data .= "<th style='padding: 10px;text-align: left;'>Table 32</th>";
+			$data .= "<td style='padding: 10px;width: 35%;'>" . $fmpledgeperpointamt5 . "</td>";
+			$data .= "</tr>";
 		}
 		if (isset($fmpledgeperpointamt6)) {
-			$data += "<tr>";
-			$data += "<th>Table 16</th>";
-			$data += "<td>" . $fmpledgeperpointamt6 . "</td>";
-			$data += "</tr>";
+			$data .= "<tr>";
+			$data .= "<th style='padding: 10px;text-align: left;'>Table 16</th>";
+			$data .= "<td style='padding: 10px;width: 35%;'>" . $fmpledgeperpointamt6 . "</td>";
+			$data .= "</tr>";
 		}
 		if (isset($fmpledgeperpointamt7)) {
-			$data += "<tr>";
-			$data += "<th>Table 8</th>";
-			$data += "<td>" . $fmpledgeperpointamt7 . "</td>";
-			$data += "</tr>";
+			$data .= "<tr>";
+			$data .= "<th style='padding: 10px;text-align: left;'>Table 8</th>";
+			$data .= "<td style='padding: 10px;width: 35%;'>" . $fmpledgeperpointamt7 . "</td>";
+			$data .= "</tr>";
 		}
 		if (isset($fmpledgeperpointamt8)) {
-			$data += "<tr>";
-			$data += "<th>Semi-Final</th>";
-			$data += "<td>" . $fmpledgeperpointamt8 . "</td>";
-			$data += "</tr>";
+			$data .= "<tr>";
+			$data .= "<th style='padding: 10px;text-align: left;'>Semi-Final</th>";
+			$data .= "<td style='padding: 10px;width: 35%;'>" . $fmpledgeperpointamt8 . "</td>";
+			$data .= "</tr>";
 		}
 		if (isset($fmpledgeperpointamt9)) {
-			$data += "<tr>";
-			$data += "<th>Final</th>";
-			$data += "<td>" . $fmpledgeperpointamt9 . "</td>";
-			$data += "</tr>";
+			$data .= "<tr>";
+			$data .= "<th style='padding: 10px;text-align: left;'>Final</th>";
+			$data .= "<td style='padding: 10px;width: 35%;'>" . $fmpledgeperpointamt9 . "</td>";
+			$data .= "</tr>";
 		}
 		if (isset($fmlumpsumamt)) {
-			$data += "<tr>";
-			$data += "<th>Lump Sum Donation</th>";
-			$data += "<td>" . $fmlumpsumamt . "</td>";
-			$data += "</tr>";
+			$data .= "<tr>";
+			$data .= "<th style='padding: 10px;text-align: left;'>Lump Sum Donation</th>";
+			$data .= "<td style='padding: 10px;width: 35%;'>" . $fmlumpsumamt . "</td>";
+			$data .= "</tr>";
 		}
-		$data += "</table>";
+		$data .= "</table>";
+		$data .= "</div>";
 
 		$to = $_POST['fm_Sponsor_email'];
 		$subject = 'Pledge Form Data';
@@ -1252,18 +1252,18 @@ function my_plugin_options()
 								?>
 							</td>
 						</tr>
-						<tr>
+						<!-- <tr>
 							<td>Fencer Tracking Url</td>
 							<td>
 								<?php
-								if (get_post_meta($postid, '14_Fencer_Tracking_Url', true)) {
-									echo get_post_meta($postid, '14_Fencer_Tracking_Url', true);
-								} else {
-									echo "-";
-								}
+								// if (get_post_meta($postid, '14_Fencer_Tracking_Url', true)) {
+								// 	echo get_post_meta($postid, '14_Fencer_Tracking_Url', true);
+								// } else {
+								// 	echo "-";
+								// }
 								?>
 							</td>
-						</tr>
+						</tr> -->
 					</table>
 				</div>
 				<hr>

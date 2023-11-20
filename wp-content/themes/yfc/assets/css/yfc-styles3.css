@@ -149,7 +149,7 @@ button#send-button {
 .columnmode2 {
   float: left;
   width: 70%;
-  padding: 0px 15px;
+  padding: 30px 15px;
 }
 
 .rowmode:after {
@@ -561,9 +561,9 @@ section#featured {
   --bs-dropdown-bg: #efefef !important;
   --bs-dropdown-link-active-bg: #999 !important;
 }
-ul.dropdown-menu.show {
+/* ul.dropdown-menu.show {
   inset: -10px auto auto 10px !important;
-}
+} */
 
 button.btn.btn-primary.more-info {
   background: #000000;
